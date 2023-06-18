@@ -1,0 +1,251 @@
+
+*{
+    
+    list-style-type: none;
+    
+}
+
+  
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+/* header{
+    background-image: url(public/images/adli-wahid-A87rz-MJN_E-unsplash.jpg);
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-blend-mode:overlay;
+} */
+
+/* .overlay{
+    background-color: rgb(102, 102, 102);
+} */
+
+.caption{
+    padding-top: 250px;
+    color: aliceblue;
+    line-height: 10px;
+    font-size: 20px;
+}
+
+.caption p{
+    font-size: 70px;
+    font-weight: bolder;
+}
+
+body{
+    margin: 0;
+}
+
+.section-title{
+    margin-top: 10rem;
+    margin-left: 5rem;
+    font-size: 45px;
+    
+}
+
+.section-title-package{
+    margin-top: 6rem;
+    margin-left: 10rem;
+    padding-left: 5px;
+    font-size: 40px;
+    border-left: 10px solid;
+}
+
+.last-word{
+    color: rgb(255, 0, 0);
+}
+
+.center{
+    text-align: center;
+}
+
+.navbar{
+    
+    top: 0;
+    left: 0;
+    background-color:transparent;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+
+.logo{
+    font-size: 25px;
+    color: rgb(0, 0, 0);
+}
+
+.logo::first-letter{
+    color: rgb(255, 106, 0);
+    font-size: 55px;
+}
+
+
+.navbar ul{
+    padding-top: 10px;
+    padding-left: 200px;
+    font-size: larger;
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+}
+
+.navbar ul li a{
+    padding: 10px;
+    font-size: larger;
+    color: rgb(0, 0, 0);
+    border-radius: 5px;
+}
+
+.navbar ul li a:hover{
+    background-color: rgb(204, 204, 204);
+}
+
+.dropdown-container{
+    position: relative;
+}
+
+
+.dropdown-content{
+    position: absolute;
+    text-align: left;
+    min-width: 100px;
+    display: none;
+    padding-top: 10px;
+}
+
+.dropdown-content a{
+    display: block;
+    color: rgb(0, 0, 0);
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 5px;
+    border-radius: 8px;   
+}
+
+.dropdown-content a:hover{
+    background-color: rgb(204, 204, 204);
+}
+
+.dropdown-container:hover .dropdown-content{
+    display: block;
+}
+
+.log-in{
+    padding: 10px;
+    margin-top: 10px;
+    margin-left: 200px;
+    font-size: larger;
+    color: rgb(0, 0, 0);
+    border-radius: 5px;
+    
+}
+
+.log-in:hover{
+    background-color: rgb(206, 206, 206);
+}
+
+
+
+.cart{
+    padding: 10px;
+    margin-top: 10px;
+    margin-left: 30px;
+    font-size: larger;
+    color: rgb(0, 0, 0);
+    border-radius: 2rem;
+}
+
+.cart:hover{
+    background-color: rgb(209, 209, 209);
+}
+
+
+
+
+footer{
+    margin-top: 10rem;
+    padding-top: 2rem;
+    height: 50vh;
+    background-color: rgb(216, 216, 218);
+}
+
+footer p{
+    padding: 0 5rem;
+}
+#footer-text{
+    font-size: 40px;
+    text-align: center;
+    
+}
+
+#footer-text span{
+    font-size: 60px;
+    color: rgb(255, 106, 0);
+}
+
+#footer-text::after{
+    content: "";
+  display: inline-block;
+  width: 500px;
+  border-bottom: 3px solid black;
+  vertical-align: middle;
+  margin: 0 10px;
+}
+
+#footer-text::before{
+    content: "";
+    display: inline-block;
+    width: 500px;
+    border-bottom: 3px solid black;
+    vertical-align: middle;
+    margin: 0 10px;
+}
+
+.links{
+    display: flex;
+    justify-content: center;
+}
+
+.link-icon{
+    margin: 30px 50px;
+    font-size: 2rem;
+}
+
+
+ .container{
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+    padding-left: 5rem;
+ }
+
+ .title{
+    text-align: center;
+    padding-bottom: 8px;
+ }
+
+ .content p{
+    line-height: 28px;
+    word-spacing: 3px;
+ }
+ .content-section{
+    padding: 3rem;
+ }
+
+ .content-section{
+    background-color: rgb(177, 177, 177);
+ }
+
+ .image-section{
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-top: 7rem;
+ }

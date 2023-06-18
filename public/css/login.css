@@ -1,0 +1,310 @@
+*{
+    
+    list-style-type: none;
+    text-decoration: none;
+    
+}
+
+  
+
+header{
+    background-image: url(images/Login/pexels-quang-nguyen-vinh-14036389.jpg);
+    background-size: 100% 100%;
+    height: 83vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-blend-mode:overlay;
+}
+
+/* .overlay{
+    background-color: rgb(134, 134, 134);
+} */
+
+.caption{
+    padding-top: 250px;
+    color: aliceblue;
+    line-height: 10px;
+    font-size: 20px;
+}
+
+.caption p{
+    font-size: 70px;
+    font-weight: bolder;
+}
+
+body{
+    margin: 0;
+}
+
+.section-title{
+    margin-top: 10rem;
+    margin-left: 5rem;
+    font-size: 45px;
+    
+}
+
+.section-title-package{
+    margin-top: 6rem;
+    margin-left: 10rem;
+    padding-left: 5px;
+    font-size: 40px;
+    border-left: 10px solid;
+}
+
+.last-word{
+    color: rgb(255, 0, 0);
+}
+
+.center{
+    text-align: center;
+}
+
+.navbar{
+    
+    top: 0;
+    left: 0;
+    background-color:rgb(53, 53, 53);
+    /* background-color:transparent; */
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+
+.logo {
+    font-size: 25px;
+    color: aliceblue;
+    text-decoration: none;
+}
+
+.logo::first-letter{
+    color: rgb(255, 106, 0);
+    font-size: 55px;
+}
+
+
+.navbar ul{
+    padding-top: 10px;
+    padding-left: 200px;
+    font-size: larger;
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+}
+
+.navbar ul li a{
+    text-decoration: none;
+    padding: 10px;
+    font-size: larger;
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+}
+
+.navbar ul li a:hover{
+    background-color: rgb(128, 128, 128);
+}
+
+.dropdown-container{
+    position: relative;
+    z-index: 1;
+}
+
+
+.dropdown-content{
+    position: absolute;
+    text-align: left;
+    min-width: 100px;
+    display: none;
+    padding-top: 10px;
+}
+
+.dropdown-content a{
+    display: block;
+    color: aliceblue;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 5px;
+    border-radius: 8px;   
+}
+
+.dropdown-content a:hover{
+    background-color: rgb(71, 71, 71);
+}
+
+.dropdown-container:hover .dropdown-content{
+    display: block;
+}
+
+.log-in{
+    text-decoration: none;
+    padding: 10px;
+    margin-top: 10px;
+    margin-left: 200px;
+    font-size: larger;
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    
+}
+
+.log-in:hover{
+    background-color: rgb(128, 128, 128);
+}
+
+
+
+.cart{
+    padding: 10px;
+    margin-top: 10px;
+    margin-left: 30px;
+    font-size: larger;
+    color: aliceblue;
+    border-radius: 2rem;
+}
+
+.cart:hover{
+    background-color: rgb(128, 128, 128);
+}
+
+.wrapper{
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.form-box{
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    width: 400px;
+    height: 440px;
+
+}
+
+.box-item{
+    padding: 50px;
+    background: transparent;
+    border: 2px solid rgb(112, 112, 112);
+    border-radius: 20px;
+    backdrop-filter: blur(30px);
+    box-shadow: 0 0 30px rgb(0, 0, 0);
+}
+
+.alert-danger{
+    background-color: rgb(207, 45, 45);
+    color: aliceblue;
+    font-size: 20px;
+    font-weight: bolder;
+    max-width: fit-content;
+}
+
+.box-item h2{
+    text-align: center;
+}
+
+.input-box{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid black;
+    margin: 30px 0;
+}
+
+.input-box label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: black;
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label{
+    top: -5px;
+}
+
+.input-box input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: black;
+    font-weight: 600;
+}
+
+.input-box .icon{
+    position: absolute;
+    right: 8px;
+    font-size: 1.2em;
+    color: black;
+    line-height: 57px;
+}
+
+.remember-forget{
+    font-size: .9em;
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.remember-forget label input{
+    accent-color: black;
+
+}
+
+.fa-lock{
+    padding-left: 2px;
+}
+
+.remember-forget a{
+    color: rgb(173, 217, 255);
+    text-decoration: none;
+}
+
+.btn{
+    width: 100%;
+    height: 45px;
+    background-color: rgb(22, 42, 49);
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    color: aliceblue;
+    transition: 0.3s ease;
+}
+
+.btn:hover{
+    background-color: rgb(101, 147, 187);
+}
+
+.login-register{
+    font-size: .9em;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 0 10px;
+}
+
+.login-register p a{
+    color: rgb(174, 217, 255);
+    text-decoration: none;
+    font-weight: 600;
+    padding-left: 5px;
+}
+
+.login-register p a:hover{
+    text-decoration: underline;
+}
