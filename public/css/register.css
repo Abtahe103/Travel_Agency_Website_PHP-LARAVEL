@@ -309,5 +309,6 @@ body{
 }
 
 .login-register p a:hover{
+    color: rgb(102, 182, 253);
     text-decoration: underline;
 }

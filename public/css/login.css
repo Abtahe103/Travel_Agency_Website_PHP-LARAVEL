@@ -269,8 +269,12 @@ body{
 }
 
 .remember-forget a{
-    color: rgb(173, 217, 255);
+    color: rgb(0, 136, 255);
     text-decoration: none;
+}
+
+.remember-forget a:hover{
+    text-decoration: underline;
 }
 
 .btn{
@@ -306,5 +310,6 @@ body{
 }
 
 .login-register p a:hover{
+    color: rgb(102, 182, 253);
     text-decoration: underline;
 }

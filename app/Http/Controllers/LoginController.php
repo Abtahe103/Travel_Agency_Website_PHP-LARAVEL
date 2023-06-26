@@ -8,6 +8,7 @@ use Illuminate\Http\RedirectResponse;
 use App\Models\Register;
 
 
+
 class LoginController extends Controller
 {
     public function index(){
@@ -15,14 +16,15 @@ class LoginController extends Controller
     }
 
     
-    public function check(Request $req){
-        $user = Register::where('email',$req['email'])->get();
-        if(($user[0]->password)==$req['password']){
-            $req->session()->put('user',$user[0]->email);
-            return redirect('Homepage.html')->with('success','Registered successfully');
-        }
-        else{
-            return back()->with('error','Invalid Email or Password');
+    public function check(Request $request){
+        $user = Register::where('email', $request->input('email'))->first();
+    
+        if ($user && Hash::check($request->input('password'), $user->password)) {
+            $request->session()->put('user', $user->email);
+            return redirect('Homepage.html')->with('success', 'Login successful');
+        } else {
+            return back()->with('error', 'Invalid Email or Password');
         }
     }
+    
 }

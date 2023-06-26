@@ -34,17 +34,16 @@
             
         </ul>
         <div>
-            @if(Session::has('success'))
-                <a href="logout.html" class="log-in">Log Out</a>
+            @if(session('user'))
+                <a href="/logout" class="log-in">Log Out</a>
             @else
                 <a href="login.html" class="log-in">Log In</a>
 
             @endif
                 
-                <i class="fa-solid fa-cart-shopping cart"></i> 
+                <a href="cart.html"><i class="fa-solid fa-cart-shopping cart"></i> </a>
                 
         </div>
-        <i class="fa-solid fa-bars menu"></i>
         
         
     </nav>

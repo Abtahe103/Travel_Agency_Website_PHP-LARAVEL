@@ -21,6 +21,7 @@ Route::get('/Homepage.html', function () {
 });
 
 Route::get('/about.html', function () {
+    
     return view('about');
 });
 
@@ -36,8 +37,19 @@ Route::get('/india.html', function () {
     return view('india');
 });
 
+Route::get('/cart.html', function () {
+    return view('cart');
+});
+
 Route::get('/register.html',[RegistrationController::class,'index']);
 Route::post('/register.html',[RegistrationController::class,'register']);
 
 Route::get('/login.html',[LoginController::class,'index']);
 Route::post('/login.html',[LoginController::class,'check']);
+
+Route::get('/logout',function(){
+    request()->session()->invalidate();
+    request()->session()->regenerateToken();
+    return back()->with('fail');
+});
+

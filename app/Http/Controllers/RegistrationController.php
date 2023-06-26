@@ -19,7 +19,7 @@ class RegistrationController extends Controller
         $register = new Register;
         $register->username = $request['username'];
         $register->email = $request['email'];
-        $register->password =$request['password'];
+        $register->password = Hash::make($request['password']);
         $register->save();
         return back()->with('success','Registered successfully');
     }
