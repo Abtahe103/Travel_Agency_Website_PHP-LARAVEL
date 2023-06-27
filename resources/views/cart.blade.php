@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +9,7 @@
     <nav class="navbar">
         <a href="Homepage.html" class="logo"><h1>Expedia</h1></a>
         <ul>
-            <li><a href="#">Home</a></li>
+            <li><a href="Homepage.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="#">Package</a></li>
             <div class="dropdown-container">
@@ -24,25 +22,17 @@
                     <a href="#">Off Road</a>
                     <a href="#">Camping</a>
                 </div>
-
             </div>
-            
             <li><a href="#">Blog</a></li>
-            
         </ul>
         <div>
-            <!-- @if(session('user'))
+            @if(session('user'))
                 <a href="/logout" class="log-in">Log Out</a>
-            @else -->
+            @else
                 <a href="login.html" class="log-in">Log In</a>
-
-            <!-- @endif -->
-                
-                <a href="cart.html"><i class="fa-solid fa-cart-shopping cart"></i> </a>
-                
-        </div>
-        
-        
+            @endif
+            <a href="cart.html"><i class="fa-solid fa-cart-shopping cart"></i></a>
+        </div>     
     </nav>
     <main>
         <div class="cart-body flex-center">

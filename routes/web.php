@@ -53,3 +53,12 @@ Route::get('/logout',function(){
     return back()->with('fail');
 });
 
+Route::get('/logout2',function(){
+    request()->session()->invalidate();
+    request()->session()->regenerateToken();
+    return redirect('login.html')->with('fail');
+});
+
+Route::get('/admin.home', function () {
+    return view('admin.home');
+});

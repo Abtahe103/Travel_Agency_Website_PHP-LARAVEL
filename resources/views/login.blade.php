@@ -32,8 +32,8 @@
                 <li><a href="#">Blog</a></li>
             </ul>
             <div>
-                    <a href="#" class="log-in">Log In</a>
-                    <i class="fa-solid fa-cart-shopping cart"></i>
+                    <a href="login.html" class="log-in">Log In</a>
+                    <a href="cart.html"><i class="fa-solid fa-cart-shopping cart"></i></a>
             </div>
         
         

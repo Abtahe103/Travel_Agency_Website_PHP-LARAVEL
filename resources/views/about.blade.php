@@ -32,13 +32,15 @@
                 <li><a href="#">Blog</a></li>
             </ul>
             <div>
-            @if(Session('user'))
-                <a href="/logout" class="log-in">Log Out</a>
-            @else
-                <a href="login.html" class="log-in">Log In</a>
+                @if(session('user'))
+                    <a href="/logout" class="log-in">Log Out</a>
+                @else
+                    <a href="login.html" class="log-in">Log In</a>
 
-            @endif
-                    <i class="fa-solid fa-cart-shopping cart"></i> 
+                @endif
+                    
+                    <a href="cart.html"><i class="fa-solid fa-cart-shopping cart"></i> </a>
+                
             </div>
             
         </nav>

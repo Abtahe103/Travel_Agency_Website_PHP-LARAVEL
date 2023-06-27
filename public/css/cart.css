@@ -12,17 +12,6 @@ a{
 }
 
 
-header{
-    background-image: url(images/adli-wahid-A87rz-MJN_E-unsplash.jpg);
-    height: 100vh;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
-    background-blend-mode:overlay;
-    
-}
-
 .navbar{
     
     top: 0;
@@ -135,6 +124,7 @@ body{
     margin: 1rem 5rem;
     padding: 1rem;
     background-color: rgb(255, 254, 225);
+    border-radius: 1rem;
 }
 
 .flex-center{
