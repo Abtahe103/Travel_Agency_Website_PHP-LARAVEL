@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="/public">
     <link rel="stylesheet" href="css/package_description.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <title>Document</title>
@@ -51,14 +52,12 @@
         <main>
     <section class="tour-info">
       <div class="tour-image">
-        <img src="images/adli-wahid-A87rz-MJN_E-unsplash.jpg" alt="Tour Image">
+        <img src="package/{{$package->image}}" alt="Tour Image">
       </div>
       <div class="tour-details">
-        <h2>Exotic Adventure Tour</h2>
-        <p class="tour-duration">Duration: 7 Days / 6 Nights</p>
-        <h3>Tour Description</h3>
         <div class="tour-description">
-          <h4>Day 1: Arrival</h4>
+            <p><?php echo nl2br($package->tour_description); ?></p>
+          <!-- <h4>Day 1: Arrival</h4>
           <p>Upon arrival, you will be greeted by our friendly tour guide and transferred to your hotel. Spend the rest of the day at leisure.</p>
           <h4>Day 2: Exploring the City</h4>
           <p>Embark on a full-day city tour, visiting iconic landmarks and immersing yourself in the local culture.</p>
@@ -71,14 +70,13 @@
           <h4>Day 6: Relaxation and Leisure</h4>
           <p>Spend the day at a luxurious spa, indulging in rejuvenating treatments and enjoying leisure time at the resort.</p>
           <h4>Day 7: Departure</h4>
-          <p>It's time to say goodbye to this amazing destination. Our team will transfer you to the airport for your departure flight.</p>
+          <p>It's time to say goodbye to this amazing destination. Our team will transfer you to the airport for your departure flight.</p> -->
         </div>
-        <p class="tour-price">Price: $1999 per person</p>
         <button class="book-now-button">Book Now</button>
       </div>
     </section>
 
-    <section class="tour-highlights">
+    <!-- <section class="tour-highlights">
       <h3>Tour Highlights</h3>
       <ul>
         <li>Visit ancient temples and historical landmarks</li>
@@ -87,7 +85,7 @@
         <li>Explore hidden natural wonders</li>
         <li>Interact with local communities</li>
       </ul>
-    </section>
+    </section> -->
 
     <section class="tour-gallery">
       <h3>Photo Gallery</h3>

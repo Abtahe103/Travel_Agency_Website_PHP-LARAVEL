@@ -60,15 +60,15 @@
                 
             <div class="destinations">
 
-                <a href="#" class="destination ban">BANGLADESH</a>
-                <a href="india.html" class="destination ind">INDIA</a>  
-                <a href="#" class="destination chi">CHINA</a> 
-                <a href="#" class="destination maldi">MALDIVES</a>
-                <a href="#" class="destination thai">THAILAND</a> 
-                <a href="#" class="destination bhu">BHUTAN</a> 
-                <a href="#" class="destination nep">NEPAL</a> 
-                <a href="#" class="destination malay">MALAYSIA</a>
-                <a href="#" class="destination sing">SiNGAPUR</a>
+                <a href="india.html?country=Bangladesh"  class="destination ban">BANGLADESH</a>
+                <a href="india.html?country=india" class="destination ind">INDIA</a>
+                <a href="india.html?country=China"  class="destination chi">CHINA</a> 
+                <a href="india.html?country=Maldives"  class="destination maldi">MALDIVES</a>
+                <a href="india.html?country=Thailand"  class="destination thai">THAILAND</a> 
+                <a href="india.html?country=Bhutan"  class="destination bhu">BHUTAN</a> 
+                <a href="india.html?country=Nepal"  class="destination nep">NEPAL</a> 
+                <a href="india.html?country=Malaysia"  class="destination malay">MALAYSIA</a>
+                <a href="india.html?country=Singapur"  class="destination sing">SiNGAPUR</a>
                      
             
             </div>

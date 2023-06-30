@@ -19,7 +19,6 @@ Route::get('/',[HomeController::class,'index']);
 
 Route::get('/Homepage.html',[HomeController::class,'index']);
 
-
 Route::get('/about.html', function () {
     
     return view('about');
@@ -83,6 +82,15 @@ Route::get('/view_all_package',[AdminController::class,'view_all_package']);
 Route::post('/add_all_package',[AdminController::class,'add_all_package']);
 
 Route::get('/show_all_package',[AdminController::class,'show_all_package']);
+
+Route::get('/update_all_package/{id}',[AdminController::class,'update_all_package']);
+
+Route::post('/update_all_package_confirm/{id}',[AdminController::class,'update_all_package_confirm']);
+
+Route::get('/package_description/{id}',[HomeController::class,'package_description']);
+
+Route::get('/india.html', [HomeController::class, 'index2']);
+
 
 // Route::middleware([
 //     'auth:sanctum',

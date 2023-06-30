@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 </head>
 <body>
+    
     <header class="overlay">
         <nav class="navbar">
             <a href="Homepage.html" class="logo"><h1>Expedia</h1></a>
@@ -53,44 +54,40 @@
         </header>
         <main>
             <div class="card-container">
-
-            @foreach($package as $package)
+            @foreach($package as $item)
                 <div class="card">
-                    <a href="package_description">
+                    <a href="{{ url('/package_description', $item->id) }}">
                         <div class="card-head">
                             <div class="card-serial">
                                 <h1>01</h1>
                             </div>
                             <div class="card-title">
-                                <p>{{$package->title1}}</p>
+                                <p>{{ $item->title1 }}</p>
                             </div>
                             <div class="rating">
-                                <i class="fa-solid fa-star star">&nbsp;</i>{{$package->rating}}
-                                
+                                <i class="fa-solid fa-star star">&nbsp;</i>{{ $item->rating }}
                             </div>
                         </div>
                         <div class="card-body">
-                            <img src="package/{{$package->image}}" >
+                            <img src="package/{{ $item->image }}">
                         </div>
                         <div class="card-footer">
                             <div class="clock">
-                                <i class="fa-solid fa-clock icon-clock"></i>&nbsp;{{$package->tour_length}}
+                                <i class="fa-solid fa-clock icon-clock"></i>&nbsp;{{ $item->tour_length }}
                             </div>
-                            
                             <div class="location">
-                                <i class="fa-solid fa-location-dot icon-location"></i>&nbsp;{{$package->location}}
+                                <i class="fa-solid fa-location-dot icon-location"></i>&nbsp;{{ $item->location }}
                             </div>
                             <div class="price">
-                                <i class="fa-solid fa-bangladeshi-taka-sign"></i>&nbsp;<del>{{$package->price}}</del>&nbsp;
-                                <i class="fa-sharp fa-solid fa-bangladeshi-taka-sign taka">&nbsp;{{$package->discount_price}}</i>
-
+                                <i class="fa-solid fa-bangladeshi-taka-sign"></i>&nbsp;<del>{{ $item->price }}</del>&nbsp;
+                                <i class="fa-sharp fa-solid fa-bangladeshi-taka-sign taka">&nbsp;{{ $item->discount_price }}</i>
                             </div>
-                           
-                            
                         </div>
                     </a>
                 </div>
             @endforeach
+
+            
                <!-- <div class="card">
                     <a href="#">
                         <div class="card-head">

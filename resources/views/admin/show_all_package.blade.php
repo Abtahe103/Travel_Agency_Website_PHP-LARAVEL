@@ -7,7 +7,7 @@
 
         .center{
           margin: auto;
-          width: 70%;
+          width: 100%;
           border: 2px solid white;
           margin-top: 40px;
         }
@@ -18,8 +18,8 @@
         }
 
         .img_size{
-          height: 150px;
-          width: 200px;
+          height: 100px;
+          width: 150px;
         }
 
         .th_color{
@@ -27,11 +27,13 @@
         }
 
         .th_design{
-          padding: 30px;
+          border: 1px solid white;
+          padding: 10px;
         }
 
         .td_design{
-          padding: 30px;
+          border: 1px solid white;
+          padding: 10px;
         }
       </style>
   </head>
@@ -80,7 +82,7 @@
                     <td class="td_design">{{$package->title1}}</td>
                     <td class="td_design">{{$package->location}}</td>
                     <td class="td_design">{{$package->country}}</td>
-                    <td class="td_design">{{$package->tour_Length}}</td>
+                    <td class="td_design">{{$package->tour_length}}</td>
                     <td class="td_design">{{$package->tour_description}}</td>
                     <td class="td_design">{{$package->rating}}</td>
                     <td class="td_design">{{$package->price}}</td>
@@ -92,13 +94,14 @@
                       <a class="btn btn-danger" onclick="return confirm('Are you sure you want to Delete this data?')" href="{{url('delete_package',$package->id)}}">Delete</a>
                     </td>
                     <td class="td_design">
-                      <a class="btn btn-success" href="{{url('update_package',$package->id)}}">Edit</a>
+                      <a class="btn btn-success" href="{{url('update_all_package',$package->id)}}">Edit</a>
                     </td>
                    </tr>
 
                    @endforeach
 
                 </table>
+                
             </div>
         </div>
     <!-- container-scroller -->

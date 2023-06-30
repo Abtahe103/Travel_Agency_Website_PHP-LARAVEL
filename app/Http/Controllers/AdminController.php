@@ -93,8 +93,6 @@ class AdminController extends Controller
 
         return redirect()->back()->with('message','Package updated Successfully');
 
-
-
     }
 
     public function view_all_package()
@@ -138,6 +136,42 @@ class AdminController extends Controller
     {
         $package = all_packages::all();
         return view('admin.show_all_package',compact('package'));
+    }
+    
+    public function update_all_package($id)
+    {
+        $package=all_packages::find($id);
+        return view('admin.update_all_package',compact('package'));
+    }
+
+    public function update_all_package_confirm(Request $request,$id)
+    {
+        $package=all_packages::find($id);
+
+        $package->title1=$request->title1;
+        $package->location=$request->location;
+        $package->country=$request->country;
+        $package->tour_length=$request->tour_length;
+        $package->tour_description=$request->tour_description;
+        $package->rating=$request->rating;
+        $package->price=$request->price;
+        $package->discount_price=$request->discount_price;
+
+        $image=$request->image;
+
+        if($image)
+        {
+            $imagename=time().'.'.$image->getClientOriginalExtension();
+
+            $request->image->move('package',$imagename);
+
+            $package->image=$imagename;
+        }
+
+        $package->save();
+
+        return redirect()->back()->with('message','Package updated Successfully');
+
     }
     
 }
