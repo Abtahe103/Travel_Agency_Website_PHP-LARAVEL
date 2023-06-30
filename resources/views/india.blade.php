@@ -53,34 +53,36 @@
         </header>
         <main>
             <div class="card-container">
+
+            @foreach($package as $package)
                 <div class="card">
-                    <a href="#">
+                    <a href="package_description">
                         <div class="card-head">
                             <div class="card-serial">
                                 <h1>01</h1>
                             </div>
                             <div class="card-title">
-                                <p>Thrilling Ladakh Tour with Pangong Lake</p>
+                                <p>{{$package->title1}}</p>
                             </div>
                             <div class="rating">
-                                <i class="fa-solid fa-star star">&nbsp;</i>5 . 0
+                                <i class="fa-solid fa-star star">&nbsp;</i>{{$package->rating}}
                                 
                             </div>
                         </div>
                         <div class="card-body">
-                            <img src="images/India/istockphoto-882998366-612x612.jpg" >
+                            <img src="package/{{$package->image}}" >
                         </div>
                         <div class="card-footer">
                             <div class="clock">
-                                <i class="fa-solid fa-clock icon-clock"></i>&nbsp;5D/4N
+                                <i class="fa-solid fa-clock icon-clock"></i>&nbsp;{{$package->tour_length}}
                             </div>
                             
                             <div class="location">
-                                <i class="fa-solid fa-location-dot icon-location"></i>&nbsp;Ladakh
+                                <i class="fa-solid fa-location-dot icon-location"></i>&nbsp;{{$package->location}}
                             </div>
                             <div class="price">
-                                <i class="fa-solid fa-bangladeshi-taka-sign"></i>&nbsp;<del>100599.99</del>&nbsp;
-                                <i class="fa-sharp fa-solid fa-bangladeshi-taka-sign taka">&nbsp;6456464</i>
+                                <i class="fa-solid fa-bangladeshi-taka-sign"></i>&nbsp;<del>{{$package->price}}</del>&nbsp;
+                                <i class="fa-sharp fa-solid fa-bangladeshi-taka-sign taka">&nbsp;{{$package->discount_price}}</i>
 
                             </div>
                            
@@ -88,7 +90,8 @@
                         </div>
                     </a>
                 </div>
-                <div class="card">
+            @endforeach
+               <!-- <div class="card">
                     <a href="#">
                         <div class="card-head">
                             <div class="card-serial">
@@ -102,7 +105,7 @@
                                 
                             </div>
                         </div>
-                        <div class="card-body">
+                         <div class="card-body">
                             <img src="images/India/caption.jpg" >
                         </div>
                         <div class="card-footer">
@@ -122,7 +125,7 @@
                             
                         </div>
                     </a>
-                </div>
+                </div> -->
                 
             </div>
         </main>

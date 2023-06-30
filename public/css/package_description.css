@@ -1,0 +1,424 @@
+*{
+    
+    list-style-type: none;
+
+    
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+  
+
+/* header{
+    background-image: url(images/India/sandeep-kr-yadav-EDPdkScQhDQ-unsplash-scaled.jpg);
+    background-size: 100% 100%;
+    height:50vh;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: cover;
+    background-blend-mode:overlay;
+} */
+
+.overlay{
+    background-color: rgb(124, 121, 121);
+}
+
+.caption{
+    padding-top: 50px;
+    color: aliceblue;
+    line-height: 10px;
+    font-size: 20px;
+    
+}
+
+.caption h1{
+
+    font-weight: bolder;
+}
+
+body{
+    margin: 0;
+}
+
+.section-title{
+    margin-top: 10rem;
+    margin-left: 5rem;
+    font-size: 45px;
+    
+}
+
+.section-title-package{
+    margin-top: 6rem;
+    margin-left: 10rem;
+    padding-left: 5px;
+    font-size: 40px;
+    border-left: 10px solid;
+}
+
+.last-word{
+    color: rgb(255, 0, 0);
+}
+
+.center{
+    text-align: center;
+}
+
+.navbar{
+    
+    top: 0;
+    left: 0;
+    background-color:transparent;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+    
+    
+}
+
+.logo {
+    font-size: 25px;
+    color: aliceblue;
+    text-decoration: none;
+}
+
+.logo::first-letter{
+    color: rgb(255, 106, 0);
+    font-size: 55px;
+}
+
+
+.navbar ul{
+    padding-top: 10px;
+    padding-left: 200px;
+    font-size: larger;
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+}
+
+.navbar ul li a{
+    text-decoration: none;
+    padding: 10px;
+    font-size: larger;
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+}
+
+.navbar ul li a:hover{
+    background-color: rgb(128, 128, 128);
+}
+
+.dropdown-container{
+    position: relative;
+    z-index: 1;
+}
+
+
+.dropdown-content{
+    position: absolute;
+    text-align: left;
+    min-width: 100px;
+    display: none;
+    padding-top: 10px;
+}
+
+.dropdown-content a{
+    display: block;
+    color: aliceblue;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 5px;
+    border-radius: 8px;   
+}
+
+.dropdown-content a:hover{
+    background-color: rgb(71, 71, 71);
+}
+
+.dropdown-container:hover .dropdown-content{
+    display: block;
+}
+
+.log-in{
+    text-decoration: none;
+    padding: 10px;
+    margin-top: 10px;
+    margin-left: 200px;
+    font-size: larger;
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    
+}
+
+.log-in:hover{
+    background-color: rgb(128, 128, 128);
+}
+
+
+
+.cart{
+    padding: 10px;
+    margin-top: 10px;
+    margin-left: 30px;
+    font-size: larger;
+    color: aliceblue;
+    border-radius: 2rem;
+}
+
+.cart:hover{
+    background-color: rgb(128, 128, 128);
+}
+
+
+
+.card-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(237, 243, 248);
+    padding-top: 100px;
+    
+}
+
+.card{
+    background-color: rgb(255, 255, 255);
+    margin-bottom: 150px;
+    box-shadow: 0.2rem 0.2rem 0.2rem rgb(136, 136, 136);
+    
+}
+
+.card-body img{
+    width: 600px;
+    height: 500px;
+}
+
+.card-head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-left: 10px solid rgb(255, 102, 0);
+}
+
+.card-serial{
+    color: rgb(255, 102, 0);
+    
+    padding-left: 5px;
+    
+}
+
+.card-title{
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.rating{
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.star{
+    color: rgb(255, 123, 0);
+}
+
+.clock{
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+.icon-clock{
+    font-size: 20px;
+    color: rgb(255, 123, 0);
+}
+
+.location{
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.icon-location{
+    color: rgb(255, 123, 0);
+    font-size: 20px;
+}
+
+.card-footer{
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+}
+
+.taka{
+    font-size: 20px;
+}
+
+.card-body img{
+    transition: 0.2s ease-in-out; 
+}
+
+.card-body img:hover{
+    transform: scale(1.02);
+}
+
+footer{
+   
+    padding-top: 3rem;
+    height: 50vh;
+    background-color: rgb(216, 216, 218);
+}
+
+footer p{
+    padding: 0 5rem;
+}
+#footer-text{
+    font-size: 40px;
+    text-align: center;
+    
+}
+
+#footer-text span{
+    font-size: 60px;
+    color: rgb(255, 106, 0);
+}
+
+#footer-text::after{
+    content: "";
+  display: inline-block;
+  width: 500px;
+  border-bottom: 3px solid black;
+  vertical-align: middle;
+  margin: 0 10px;
+}
+
+#footer-text::before{
+    content: "";
+    display: inline-block;
+    width: 500px;
+    border-bottom: 3px solid black;
+    vertical-align: middle;
+    margin: 0 10px;
+}
+
+.links{
+    display: flex;
+    justify-content: center;
+}
+
+.link-icon{
+    margin: 30px 50px;
+    font-size: 2rem;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .tour-info {
+    display: flex;
+    margin-bottom: 40px;
+  }
+  
+  .tour-image {
+    flex: 1;
+  }
+  
+  .tour-image img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .tour-details {
+    flex: 2;
+    padding-left: 40px;
+  }
+  
+  .tour-details h2 {
+    font-size: 24px;
+    color: #333;
+    margin-top: 0;
+  }
+  
+  .tour-duration {
+    font-size: 16px;
+    color: #666;
+  }
+  
+  .tour-description {
+    margin-top: 20px;
+  }
+  
+  .tour-description h4 {
+    font-size: 18px;
+    color: #333;
+    margin-top: 30px;
+  }
+  
+  .tour-description p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  .tour-price {
+    font-size: 18px;
+    color: #333;
+    margin-top: 30px;
+  }
+  
+  .book-now-button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  .tour-highlights {
+    margin-bottom: 40px;
+  }
+  
+  .tour-highlights h3 {
+    font-size: 24px;
+    color: #333;
+    margin-top: 0;
+  }
+  
+  .tour-highlights ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    margin-top: 10px;
+  }
+  
+  .tour-highlights li {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+  }
+  
+  .tour-gallery {
+    margin-bottom: 40px;
+  }
+  
+  .tour-gallery h3 {
+    font-size: 24px;
+    color: #333;
+    margin-top: 0;
+  }
+  
+  .image-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+  }
+  
+  .image-grid img {
+    max-width: 100%;
+    height: auto;
+  }

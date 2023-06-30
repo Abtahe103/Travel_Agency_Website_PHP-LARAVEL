@@ -62,11 +62,9 @@
 
                 <a href="#" class="destination ban">BANGLADESH</a>
                 <a href="india.html" class="destination ind">INDIA</a>  
-
                 <a href="#" class="destination chi">CHINA</a> 
                 <a href="#" class="destination maldi">MALDIVES</a>
                 <a href="#" class="destination thai">THAILAND</a> 
-                
                 <a href="#" class="destination bhu">BHUTAN</a> 
                 <a href="#" class="destination nep">NEPAL</a> 
                 <a href="#" class="destination malay">MALAYSIA</a>
@@ -78,23 +76,52 @@
         <p class="section-title-package">Tour Package On <span class="last-word">Sale</span></p>
         <section class="tour-packages">
             <div class="row">
+                @foreach($package as $index => $packageItem)
+                    <div class="card">
+                        <a href="{{url('package_details',$packageItem->id)}}">
+                            <div class="card-img">
+                                <img src="package/{{$packageItem->image}}">
+                            </div>
+                            <div class="card-body">
+                                <h1>{{$packageItem->title1}}</h1>
+                                <p>{{$packageItem->title2}}</p>
+                                <i class="fa-solid fa-star star"></i>&nbsp;{{$packageItem->rating}}<br><br>
+                                <i class="fa-solid fa-bangladeshi-taka-sign"></i>&nbsp;<del>{{$packageItem->price}}</del><br><br>
+                                <i class="fa-solid fa-bangladeshi-taka-sign"></i>&nbsp;{{$packageItem->discount_price}}
+                            </div>
+                        </a>
+                    </div>
+                    
+                    @if(($index + 1) % 4 === 0)
+                        </div>
+                        <div class="row">
+                    @endif
+                @endforeach
+            </div>
+
+            <!-- <div class="row">
+                
+                @foreach($package as $package)
+                
                     <div class="card">
                         <a href="#">
                             <div class="card-img">
-                                <img src="images/Tour packages/kirti-kalla-JRhvllDBhzs-unsplash.jpg" title="Hawa Mahal, Jaipur, India">
+                                <img src="package/{{$package->image}}" title="Hawa Mahal, Jaipur, India">
                                 
                             </div>
                             <div class="card-body">
-                                <h1>Discover India</h1>
-                                <p>Jaipur</p>
-                                <i class="fa-solid fa-star star"></i>&nbsp;7.3<br><br>
-                                <i class="fa-solid fa-bangladeshi-taka-sign"></i>&nbsp;<del>60599.99</del><br><br>
-                                <i class="fa-solid fa-bangladeshi-taka-sign"></i>&nbsp;54499.99
+                                <h1>{{$package->title1}}</h1>
+                                <p>{{$package->title2}}</p>
+                                <i class="fa-solid fa-star star"></i>&nbsp;{{$package->rating}}<br><br>
+                                <i class="fa-solid fa-bangladeshi-taka-sign"></i>&nbsp;<del>{{$package->price}}</del><br><br>
+                                <i class="fa-solid fa-bangladeshi-taka-sign"></i>&nbsp;{{$package->discount_price}}
                             </div>
                         </a>
                         
                     </div>
-                    <div class="card">
+                
+                @endforeach -->
+                    <!-- <div class="card">
                         <a href="#"><div class="card-img">
                             <img src="images/Tour packages/sebastian-pena-lambarri-_aJd9HaMHWg-unsplash.jpg" >
                             
@@ -138,10 +165,11 @@
                                 <i class="fa-solid fa-bangladeshi-taka-sign"></i>&nbsp;60499.99
                             </div>
                         </div>
-                        </a>                  
+                        </a>                   -->
                     
-            </div>
-            <div class="row">
+            <!-- </div> -->
+        
+            <!-- <div class="row">
                 <div class="card">
                     <a href="#">
                         <div class="card-img">
@@ -206,7 +234,7 @@
                     </div>
                     </a>
                           
-        </div>
+                </div> -->
             
         </section>
         
