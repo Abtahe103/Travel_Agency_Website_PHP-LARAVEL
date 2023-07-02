@@ -72,7 +72,8 @@
           <h4>Day 7: Departure</h4>
           <p>It's time to say goodbye to this amazing destination. Our team will transfer you to the airport for your departure flight.</p> -->
         </div>
-        <button class="book-now-button">Book Now</button>
+        <form action="{{url('add_cart',$package->id)}}" method="get"><button class="book-now-button">Book Now</button></form>
+        
       </div>
     </section>
 

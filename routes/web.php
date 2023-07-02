@@ -91,6 +91,12 @@ Route::get('/package_description/{id}',[HomeController::class,'package_descripti
 
 Route::get('/india.html', [HomeController::class, 'index2']);
 
+Route::get('/add_cart/{id}',[HomeController::class,'add_cart']);
+
+Route::get('/show_cart',[HomeController::class,'show_cart']);
+
+
+
 
 // Route::middleware([
 //     'auth:sanctum',

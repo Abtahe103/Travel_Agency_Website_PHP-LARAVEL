@@ -48,12 +48,15 @@
                         <button class="btn">Shop More</button>
                     </div>
                 </div>
+
+                @foreach($cart as $cart)
+
                 <div class="cart_item card flex-space-around">
                     <input type="checkbox" name="" id="">
-                    <img src="images/download.jpeg" alt="" class="cart_item-img">
+                    <img src="/package/{{$cart->image}}" alt="" class="cart_item-img">
                     <div class="cart_item-description">
-                        <h3 class="product_name">India</h3>
-                        <h4 class="product_price">Price: $222.99</h4>
+                        <h3 class="product_name">{{$cart->package_title}}</h3>
+                        <h4 class="product_price">{{$cart->package_title}}</h4>
                         <p class="cart_item-shipping">Free Shipping</p>
                     </div>
                     <div class="cart_item-actions">
@@ -64,36 +67,16 @@
                             <button class="btn">
                                 <i class="fa-solid fa-plus"></i>
                             </button>
-                            <span>3</span>
+                            <span>{{$cart->quantity}}</span>
                             <button class="btn">
                                 <i class="fa-solid fa-minus"></i>
                             </button>
                         </div>
                     </div>
                 </div>
-                <div class="cart_item card flex-space-around">
-                    <input type="checkbox" name="" id="">
-                    <img src="images/yu-kato-9PJ6Cmi--j4-unsplash.jpg" alt="" class="cart_item-img">
-                    <div class="cart_item-description">
-                        <h3 class="product_name">India</h3>
-                        <h4 class="product_price">Price: $222.99</h4>
-                        <p class="cart_item-shipping">Free Shipping</p>
-                    </div>
-                    <div class="cart_item-actions">
-                        <button class="btn">
-                            <i class="fa-solid fa-trash"></i>
-                        </button>
-                        <div>
-                            <button class="btn">
-                                <i class="fa-solid fa-plus"></i>
-                            </button>
-                            <span>3</span>
-                            <button class="btn">
-                                <i class="fa-solid fa-minus"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
+
+                @endforeach
+                
             </div>
             <div class="cart_payment">
                 <div class="cart_payment-summary card">

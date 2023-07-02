@@ -35,13 +35,13 @@
         </ul>
         <div>
             @if(session('user'))
-                <a href="/logout" class="log-in">Log Out</a>
+                <a href="/logout" class="log-in">{{session('user')}}</a>
             @else
                 <a href="login.html" class="log-in">Log In</a>
 
             @endif
                 
-                <a href="cart.html"><i class="fa-solid fa-cart-shopping cart"></i> </a>
+                <a href="{{url('show_cart')}}"><i class="fa-solid fa-cart-shopping cart"></i> </a>
                 
         </div>
         
