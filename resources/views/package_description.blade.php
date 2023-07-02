@@ -11,41 +11,40 @@
 </head>
 <body>
 <header class="overlay">
-        <nav class="navbar">
-            <a href="Homepage.html" class="logo"><h1>Expedia</h1></a>
-            <ul>
-                <li><a href="Homepage.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="#">Package</a></li>
-                <div class="dropdown-container">
-                    <li><a href="#">Service</a></li>
-                    <div class="dropdown-content">
-                        <a href="#">Adventure</a>
-                        <a href="#">Tour Guide</a>
-                        <a href="#">Trekking</a>
-                        <a href="#">Camp Fire</a>
-                        <a href="#">Off Road</a>
-                        <a href="#">Camping</a>
-                    </div>
-    
-                </div>
-                
-                <li><a href="#">Blog</a></li>
-            </ul>
-            <div>
-            @if(session('user'))
-                <a href="/logout" class="log-in">Log Out</a>
-            @else
-                <a href="login.html" class="log-in">Log In</a>
-
-            @endif
-                
-                <a href="cart.html"><i class="fa-solid fa-cart-shopping cart"></i> </a>
-                
+<nav class="navbar">
+    <a href="Homepage.html" class="logo"><h1>Expedia</h1></a>
+    <ul>
+        <li><a href="Homepage.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="#">Package</a></li>
+        <div class="dropdown-container">
+            <li><a href="#">Service</a></li>
+            <div class="dropdown-content">
+                <a href="#">Adventure</a>
+                <a href="#">Tour Guide</a>
+                <a href="#">Trekking</a>
+                <a href="#">Camp Fire</a>
+                <a href="#">Off Road</a>
+                <a href="#">Camping</a>
+            </div>
         </div>
-            
-            
-        </nav>
+        <li><a href="#">Blog</a></li>
+    </ul>
+    <div class="navbar-right">
+        @if(session('user'))
+            <div class="dropdown-container">
+                <a href="#" class="log-in">{{ session('user') }}</a>
+                <div class="dropdown-content">
+                    <a href="#">Profile</a>
+                    <a href="/logout">Logout</a>
+                </div>
+            </div>
+        @else
+            <a href="login.html" class="log-in">Log In</a>
+        @endif
+        <a href="{{ url('show_cart') }}"><i class="fa-solid fa-cart-shopping cart"></i></a>
+    </div>
+</nav>
     
             
         </header>
@@ -72,8 +71,12 @@
           <h4>Day 7: Departure</h4>
           <p>It's time to say goodbye to this amazing destination. Our team will transfer you to the airport for your departure flight.</p> -->
         </div>
-        <form action="{{url('add_cart',$package->id)}}" method="get"><button class="book-now-button">Book Now</button></form>
-        
+        <form action="{{url('add_cart',$package->id)}}" method="get"><button class="book-now-button">Add to Cart</button></form>
+        @if(Session::has('message'))
+                        <div class="alert-danger" role="alert">
+                            {{Session::get('message')}}
+                        </div>
+                    @endif
       </div>
     </section>
 

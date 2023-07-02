@@ -11,7 +11,7 @@
 </head>
 <body>
    <header class="overlay">
-    <nav class="navbar">
+    <!-- <nav class="navbar">
         <a href="Homepage.html" class="logo"><h1>Expedia</h1></a>
         <ul>
             <li><a href="#">Home</a></li>
@@ -46,7 +46,43 @@
         </div>
         
         
-    </nav>
+    </nav> -->
+    <nav class="navbar">
+    <a href="Homepage.html" class="logo"><h1>Expedia</h1></a>
+    <ul>
+        <li><a href="Homepage.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="#">Package</a></li>
+        <div class="dropdown-container">
+            <li><a href="#">Service</a></li>
+            <div class="dropdown-content">
+                <a href="#">Adventure</a>
+                <a href="#">Tour Guide</a>
+                <a href="#">Trekking</a>
+                <a href="#">Camp Fire</a>
+                <a href="#">Off Road</a>
+                <a href="#">Camping</a>
+            </div>
+        </div>
+        <li><a href="#">Blog</a></li>
+    </ul>
+    <div class="navbar-right">
+        @if(session('user'))
+            <div class="dropdown-container">
+                <a href="#" class="log-in">{{ session('user') }}</a>
+                <div class="dropdown-content">
+                    <a href="/profile">Profile</a>
+                    <a href="/logout">Logout</a>
+                </div>
+            </div>
+        @else
+            <a href="login.html" class="log-in">Log In</a>
+        @endif
+        <a href="{{ url('show_cart') }}"><i class="fa-solid fa-cart-shopping cart"></i></a>
+    </div>
+</nav>
+
+
 
     <div class="caption center">
         <h1>It's time for new</h1>
@@ -78,7 +114,7 @@
             <div class="row">
                 @foreach($package as $index => $packageItem)
                     <div class="card">
-                        <a href="{{url('package_details',$packageItem->id)}}">
+                        <a href="{{url('/package_description',$packageItem->id)}}">
                             <div class="card-img">
                                 <img src="package/{{$packageItem->image}}">
                             </div>

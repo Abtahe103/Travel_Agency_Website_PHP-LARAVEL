@@ -95,6 +95,15 @@
                             </select>
                         </div>
                         <div class="div_design">
+                            <label>Package Type</label>
+                            <select name="package_type">
+                                <option value="{{$package->package_type}}" selected="{{$package->package_type}}">{{$package->package_type}}</option>
+                                <option>Normal</option>
+                                <option>Special</option>
+                                
+                            </select>
+                        </div>
+                        <div class="div_design">
                             <label>Tour Length : </label>
                             <input type="text" name="tour_length" placeholder="Tour Length" required value="{{$package->tour_length}}">
                         </div>

@@ -6,34 +6,40 @@
     <title>Document</title>
 </head>
 <body>
-    <nav class="navbar">
-        <a href="Homepage.html" class="logo"><h1>Expedia</h1></a>
-        <ul>
-            <li><a href="Homepage.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="#">Package</a></li>
+<nav class="navbar">
+    <a href="Homepage.html" class="logo"><h1>Expedia</h1></a>
+    <ul>
+        <li><a href="Homepage.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="#">Package</a></li>
+        <div class="dropdown-container">
+            <li><a href="#">Service</a></li>
+            <div class="dropdown-content">
+                <a href="#">Adventure</a>
+                <a href="#">Tour Guide</a>
+                <a href="#">Trekking</a>
+                <a href="#">Camp Fire</a>
+                <a href="#">Off Road</a>
+                <a href="#">Camping</a>
+            </div>
+        </div>
+        <li><a href="#">Blog</a></li>
+    </ul>
+    <div class="navbar-right">
+        @if(session('user'))
             <div class="dropdown-container">
-                <li><a href="#">Service</a></li>
+                <a href="#" class="log-in">{{ session('user') }}</a>
                 <div class="dropdown-content">
-                    <a href="#">Adventure</a>
-                    <a href="#">Tour Guide</a>
-                    <a href="#">Trekking</a>
-                    <a href="#">Camp Fire</a>
-                    <a href="#">Off Road</a>
-                    <a href="#">Camping</a>
+                    <a href="#">Profile</a>
+                    <a href="/logout">Logout</a>
                 </div>
             </div>
-            <li><a href="#">Blog</a></li>
-        </ul>
-        <div>
-            @if(session('user'))
-                <a href="/logout" class="log-in">Log Out</a>
-            @else
-                <a href="login.html" class="log-in">Log In</a>
-            @endif
-            <a href="cart.html"><i class="fa-solid fa-cart-shopping cart"></i></a>
-        </div>     
-    </nav>
+        @else
+            <a href="login.html" class="log-in">Log In</a>
+        @endif
+        <a href="{{ url('show_cart') }}"><i class="fa-solid fa-cart-shopping cart"></i></a>
+    </div>
+</nav>
     <main>
         <div class="cart-body flex-center">
             <div class="cart_item">
@@ -49,6 +55,8 @@
                     </div>
                 </div>
 
+                <?php $total_price=0 ?>
+
                 @foreach($cart as $cart)
 
                 <div class="cart_item card flex-space-around">
@@ -57,46 +65,46 @@
                     <div class="cart_item-description">
                         <h3 class="product_name">{{$cart->package_title}}</h3>
                         <h4 class="product_price">{{$cart->package_title}}</h4>
-                        <p class="cart_item-shipping">Free Shipping</p>
+                        
                     </div>
                     <div class="cart_item-actions">
                         <button class="btn">
                             <i class="fa-solid fa-trash"></i>
                         </button>
                         <div>
-                            <button class="btn">
+                            <!-- <button class="btn">
                                 <i class="fa-solid fa-plus"></i>
                             </button>
                             <span>{{$cart->quantity}}</span>
                             <button class="btn">
                                 <i class="fa-solid fa-minus"></i>
-                            </button>
+                            </button> -->
+                            <label>Quantity: </label>
+                            <input type="number" name="quantity" min="1" value="{{$cart->quantity}}" placeholder="Price" required>
                         </div>
                     </div>
                 </div>
 
+                <?php $total_price = $total_price + $cart->price ?>
+
                 @endforeach
+
+
                 
             </div>
             <div class="cart_payment">
                 <div class="cart_payment-summary card">
                     <h2>Payment Summary</h2>
-                    <div>
-                        <p>Subtotal:</p>
-                        <p>$341.99</p>
-                    </div>
-                    <div>
-                        <p>Shipping Cost:</p>
-                        <p>$2.00</p>
-                    </div>
+                    
                     <div>
                         <p>Total Cost:</p>
-                        <p>$344.99</p>
+                        <p>{{$total_price}}</p>
                     </div>
                     <div>
-                        <button class="btn cart_payment-btn">
-                            Pay Now
-                        </button>
+                        <a href="{{url('booking')}}"><button class="btn cart_payment-btn">
+                            Book Now
+                        </button></a>
+                        
                     </div>
                     
                 </div>

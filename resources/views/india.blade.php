@@ -10,42 +10,41 @@
 </head>
 <body>
     
-    <header class="overlay">
-        <nav class="navbar">
-            <a href="Homepage.html" class="logo"><h1>Expedia</h1></a>
-            <ul>
-                <li><a href="Homepage.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="#">Package</a></li>
-                <div class="dropdown-container">
-                    <li><a href="#">Service</a></li>
-                    <div class="dropdown-content">
-                        <a href="#">Adventure</a>
-                        <a href="#">Tour Guide</a>
-                        <a href="#">Trekking</a>
-                        <a href="#">Camp Fire</a>
-                        <a href="#">Off Road</a>
-                        <a href="#">Camping</a>
-                    </div>
-    
-                </div>
-                
-                <li><a href="#">Blog</a></li>
-            </ul>
-            <div>
-            @if(session('user'))
-                <a href="/logout" class="log-in">Log Out</a>
-            @else
-                <a href="login.html" class="log-in">Log In</a>
-
-            @endif
-                
-                <a href="cart.html"><i class="fa-solid fa-cart-shopping cart"></i> </a>
-                
+    <header class="overlay" style="background-image: url(images/India/sandeep-kr-yadav-EDPdkScQhDQ-unsplash-scaled.jpg);">
+    <nav class="navbar">
+    <a href="Homepage.html" class="logo"><h1>Expedia</h1></a>
+    <ul>
+        <li><a href="Homepage.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="#">Package</a></li>
+        <div class="dropdown-container">
+            <li><a href="#">Service</a></li>
+            <div class="dropdown-content">
+                <a href="#">Adventure</a>
+                <a href="#">Tour Guide</a>
+                <a href="#">Trekking</a>
+                <a href="#">Camp Fire</a>
+                <a href="#">Off Road</a>
+                <a href="#">Camping</a>
+            </div>
         </div>
-            
-            
-        </nav>
+        <li><a href="#">Blog</a></li>
+    </ul>
+    <div class="navbar-right">
+        @if(session('user'))
+            <div class="dropdown-container">
+                <a href="#" class="log-in">{{ session('user') }}</a>
+                <div class="dropdown-content">
+                    <a href="#">Profile</a>
+                    <a href="/logout">Logout</a>
+                </div>
+            </div>
+        @else
+            <a href="login.html" class="log-in">Log In</a>
+        @endif
+        <a href="{{ url('show_cart') }}"><i class="fa-solid fa-cart-shopping cart"></i></a>
+    </div>
+</nav>
     
         <div class="caption center">
             <h1>Best of India This Summar</h1>

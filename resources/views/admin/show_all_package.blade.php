@@ -66,6 +66,7 @@
                     <th class="th_design">Title1</th>
                     <th class="th_design">Location</th>
                     <th class="th_design">Country</th>
+                    <th class="th_design">Package Type</th>
                     <th class="th_design">Tour Length</th>
                     <th class="th_design">Tour Description</th>
                     <th class="th_design">Rating</th>
@@ -82,6 +83,7 @@
                     <td class="td_design">{{$package->title1}}</td>
                     <td class="td_design">{{$package->location}}</td>
                     <td class="td_design">{{$package->country}}</td>
+                    <td class="td_design">{{$package->package_type}}</td>
                     <td class="td_design">{{$package->tour_length}}</td>
                     <td class="td_design">{{$package->tour_description}}</td>
                     <td class="td_design">{{$package->rating}}</td>

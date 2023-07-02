@@ -8,6 +8,12 @@ use App\Models\package_sale;
 
 use App\Models\all_packages;
 
+use App\Models\booking;
+
+use App\Models\Register;
+
+use App\Models\cart;
+
 class AdminController extends Controller
 {
     public function view_package()
@@ -54,7 +60,7 @@ class AdminController extends Controller
 
     public function delete_package($id)
     {
-        $package = package_sale::find($id);
+        $package = all_packages::find($id);
 
         $package->delete();
 
@@ -108,6 +114,7 @@ class AdminController extends Controller
         $package->title1=$request->title1;
         $package->location=$request->location;
         $package->country=$request->country;
+        $package->package_type=$request->package_type;
         $package->tour_length=$request->tour_length;
         $package->tour_description=$request->tour_description;
         $package->rating=$request->rating;
@@ -151,6 +158,7 @@ class AdminController extends Controller
         $package->title1=$request->title1;
         $package->location=$request->location;
         $package->country=$request->country;
+        $package->package_type=$request->package_type;
         $package->tour_length=$request->tour_length;
         $package->tour_description=$request->tour_description;
         $package->rating=$request->rating;
@@ -172,6 +180,38 @@ class AdminController extends Controller
 
         return redirect()->back()->with('message','Package updated Successfully');
 
+    }
+
+    public function booking()
+    {
+        $username = session('user');
+        $user = Register::where('username', $username)->first();
+        
+        $userid = $user->id;
+
+        $data=cart::where('user_id','=',$userid)->get();
+
+        foreach($data as $data)
+        {
+            $booking = new booking;
+            $booking->name=$data->name;
+            $booking->email=$data->email;
+            $booking->user_id=$data->user_id;
+            $booking->package_title=$data->package_title;
+            $booking->price=$data->price;
+            $booking->quantity=$data->quantity;
+            $booking->image=$data->image;
+            $booking->package_id=$data->package_id;
+            $booking->payment_status='cash on delivery';
+
+            $booking->save();
+
+            $cart_id=$data->id;
+            $cart=cart::find($cart_id);
+            $cart->delete();
+        }
+
+        return redirect()->back();
     }
     
 }

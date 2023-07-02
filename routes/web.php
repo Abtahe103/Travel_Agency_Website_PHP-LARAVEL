@@ -41,6 +41,10 @@ Route::get('/cart.html', function () {
     return view('cart');
 });
 
+Route::get('/profile', function () {
+    return view('profile');
+});
+
 
 Route::get('/register.html',[RegistrationController::class,'index']);
 Route::post('/register.html',[RegistrationController::class,'register']);
@@ -95,7 +99,11 @@ Route::get('/add_cart/{id}',[HomeController::class,'add_cart']);
 
 Route::get('/show_cart',[HomeController::class,'show_cart']);
 
+Route::get('/profile',[HomeController::class,'show_profile']);
 
+Route::post('/update_profile/{id}',[HomeController::class,'updateProfile']);
+
+Route::get('/booking',[AdminController::class,'booking']);
 
 
 // Route::middleware([

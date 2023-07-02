@@ -94,6 +94,14 @@
                             </select>
                         </div>
                         <div class="div_design">
+                            <label>Package type</label>
+                            <select name="package_type" required>
+                                <option value="" selected="">Select type</option>
+                                <option>Normal</option>
+                                <option>Special</option>
+                            </select>
+                        </div>
+                        <div class="div_design">
                             <label>Tour Length : </label>
                             <input type="text" name="tour_length" placeholder="Tour Length" required>
                         </div>

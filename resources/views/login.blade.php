@@ -9,35 +9,40 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 </head>
 <body>
-
-        <nav class="navbar">
-            <a href="Homepage.html" class="logo"><h1>Expedia</h1></a>
-            <ul>
-                <li><a href="Homepage.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="#">Package</a></li>
-                <div class="dropdown-container">
-                    <li><a href="#">Service</a></li>
-                    <div class="dropdown-content">
-                        <a href="#">Adventure</a>
-                        <a href="#">Tour Guide</a>
-                        <a href="#">Trekking</a>
-                        <a href="#">Camp Fire</a>
-                        <a href="#">Off Road</a>
-                        <a href="#">Camping</a>
-                    </div>
-
-                </div>
-                
-                <li><a href="#">Blog</a></li>
-            </ul>
-            <div>
-                    <a href="login.html" class="log-in">Log In</a>
-                    <a href="cart.html"><i class="fa-solid fa-cart-shopping cart"></i></a>
+<nav class="navbar">
+    <a href="Homepage.html" class="logo"><h1>Expedia</h1></a>
+    <ul>
+        <li><a href="Homepage.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="#">Package</a></li>
+        <div class="dropdown-container">
+            <li><a href="#">Service</a></li>
+            <div class="dropdown-content">
+                <a href="#">Adventure</a>
+                <a href="#">Tour Guide</a>
+                <a href="#">Trekking</a>
+                <a href="#">Camp Fire</a>
+                <a href="#">Off Road</a>
+                <a href="#">Camping</a>
             </div>
-        
-        
-        </nav>
+        </div>
+        <li><a href="#">Blog</a></li>
+    </ul>
+    <div class="navbar-right">
+        @if(session('user'))
+            <div class="dropdown-container">
+                <a href="#" class="log-in">{{ session('user') }}</a>
+                <div class="dropdown-content">
+                    <a href="#">Profile</a>
+                    <a href="/logout">Logout</a>
+                </div>
+            </div>
+        @else
+            <a href="login.html" class="log-in">Log In</a>
+        @endif
+        <a href="{{ url('show_cart') }}"><i class="fa-solid fa-cart-shopping cart"></i></a>
+    </div>
+</nav>
         <header class="overlay">
         <div class="wrapper">
             <div class="form-box">

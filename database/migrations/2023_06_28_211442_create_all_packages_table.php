@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('title1')->nullable();
             $table->string('location')->nullable();
             $table->string('country')->nullable();
+            $table->string('package_type')->nullable();
             $table->string('rating')->nullable();
             $table->string('tour_length')->nullable();
             $table->text('tour_description')->nullable();
