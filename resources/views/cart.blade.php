@@ -11,8 +11,8 @@
     <ul>
         <li><a href="Homepage.html">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="#">Package</a></li>
-        <div class="dropdown-container">
+        <li><a href="packageView">Package</a></li>
+        <!-- <div class="dropdown-container">
             <li><a href="#">Service</a></li>
             <div class="dropdown-content">
                 <a href="#">Adventure</a>
@@ -22,15 +22,15 @@
                 <a href="#">Off Road</a>
                 <a href="#">Camping</a>
             </div>
-        </div>
-        <li><a href="#">Blog</a></li>
+        </div> -->
+        <li><a href="/contact">Contact</a></li>
     </ul>
     <div class="navbar-right">
         @if(session('user'))
             <div class="dropdown-container">
                 <a href="#" class="log-in">{{ session('user') }}</a>
                 <div class="dropdown-content">
-                    <a href="#">Profile</a>
+                    <a href="/profile">Profile</a>
                     <a href="/logout">Logout</a>
                 </div>
             </div>
@@ -44,14 +44,10 @@
         <div class="cart-body flex-center">
             <div class="cart_item">
                 <div class="cart_items-heading card">
-                    <h2>Shopping Cart [2 items]</h2>
+                    <h2>Booking Cart</h2>
                     <div class="cart_items-actions">
-                        <label for="select">
-                            <input type="checkbox" name="select" id="select">
-                            Select all items
-                        </label>
-                        <button class="btn"><i class="fa-solid fa-trash"></i></button>
-                        <button class="btn">Shop More</button>
+                        
+                        
                     </div>
                 </div>
 
@@ -60,17 +56,21 @@
                 @foreach($cart as $cart)
 
                 <div class="cart_item card flex-space-around">
-                    <input type="checkbox" name="" id="">
+                    <!-- <input type="checkbox" name="" id=""> -->
                     <img src="/package/{{$cart->image}}" alt="" class="cart_item-img">
                     <div class="cart_item-description">
                         <h3 class="product_name">{{$cart->package_title}}</h3>
-                        <h4 class="product_price">{{$cart->package_title}}</h4>
+                        <h4 class="product_price">{{$cart->location}}</h4>
                         
                     </div>
                     <div class="cart_item-actions">
+                        <form action="{{url('delete_cart',$cart->id)}}" method="post" enctype="multipart/form-data">
+                            @csrf
                         <button class="btn">
                             <i class="fa-solid fa-trash"></i>
                         </button>
+                        </form>
+                        
                         <div>
                             <!-- <button class="btn">
                                 <i class="fa-solid fa-plus"></i>

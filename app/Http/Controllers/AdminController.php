@@ -14,6 +14,8 @@ use App\Models\Register;
 
 use App\Models\cart;
 
+use App\Models\country_grid;
+
 class AdminController extends Controller
 {
     public function view_package()
@@ -132,7 +134,6 @@ class AdminController extends Controller
             $package->image=$imagename;
     
         }
-
         $package->save();
 
         return redirect()->back()->with('message','Package Added Successfully');
@@ -212,6 +213,59 @@ class AdminController extends Controller
         }
 
         return redirect()->back();
+    }
+
+    public function view_template()
+    {
+        return view('admin.add_template');
+    }
+
+    public function add_template(Request $request)
+    {
+        $country = $request->country;
+        
+        // Check if a record exists for the given country
+        $existingTemplate = country_grid::where('country', $country)->first();
+
+        if ($existingTemplate) {
+            // Update the existing record
+            $existingTemplate->heading = $request->heading;
+
+            $image = $request->image;
+            if ($image) {
+                $imagename = time() . '.' . $image->getClientOriginalExtension();
+                $request->image->move('package', $imagename);
+                $existingTemplate->image = $imagename;
+            }
+
+            $existingTemplate->save();
+
+            return redirect()->back()->with('message', 'Template Updated Successfully');
+        } 
+        
+        else {
+            // Create a new record
+            $template = new country_grid;
+            $template->heading = $request->heading;
+            $template->country = $country;
+
+            $image = $request->image;
+            if ($image) {
+                $imagename = time() . '.' . $image->getClientOriginalExtension();
+                $request->image->move('package', $imagename);
+                $template->image = $imagename;
+            }
+
+            $template->save();
+
+            return redirect()->back()->with('message', 'Template Added Successfully');
+        }
+    }
+
+    public function orders()
+    {
+        $orders = booking::all();
+        return view('admin.booking',compact('orders'));
     }
     
 }

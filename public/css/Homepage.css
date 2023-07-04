@@ -39,9 +39,12 @@ header{
     font-weight: bolder;
 }
 
-body{
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f1f1f1;
     margin: 0;
-}
+    padding: 0;
+  }
 
 .section-title{
     margin-top: 10rem;
@@ -192,7 +195,7 @@ body{
 }
 
 .top-destinations{
-    height: 135vh;
+    height: 150vh;
     /* background-color: rgb(105, 105, 105); */
     display: flex;
     flex-direction: column;
@@ -316,6 +319,15 @@ body{
     grid-row: 6/8;
 } 
 
+.amer{
+    font-size: 30px;
+    background-image: url(images/pexels-kin-pastor-777059.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-blend-mode:overlay;
+    grid-row: 8/10;   
+}
+
 
 .destination:hover{
     background-blend-mode: normal;
@@ -357,6 +369,12 @@ body{
 .card-body{
     padding-left: 1rem;
     line-height: 10px;
+}
+
+.card-body p{
+    font-weight: bolder;
+    line-height: 25px;
+    font-size: larger;
 }
 .star{
     color: rgb(255, 208, 0);

@@ -80,6 +80,13 @@ body{
     
 }
 
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f1f1f1;
+    margin: 0;
+    padding: 0;
+  }
+
 .logo{
     font-size: 25px;
     color: aliceblue;
@@ -185,7 +192,7 @@ body{
     z-index: -1;
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
     height: 80vh;
 }
 
@@ -199,7 +206,7 @@ body{
 }
 
 .box-item{
-    padding: 50px;
+    padding: 40px;
     background: transparent;
     border: 2px solid rgb(112, 112, 112);
     border-radius: 20px;

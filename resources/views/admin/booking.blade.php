@@ -63,41 +63,30 @@
               <h2 class="font_size">All Bookings</h2>
                 <table class="center">
                    <tr class="th_color">
-                    <th class="th_design">Title1</th>
-                    <th class="th_design">Location</th>
-                    <th class="th_design">Country</th>
-                    <th class="th_design">Package Type</th>
-                    <th class="th_design">Tour Length</th>
-                    <th class="th_design">Tour Description</th>
-                    <th class="th_design">Rating</th>
-                    <th class="th_design">Price</th>
-                    <th class="th_design">Discount Price</th>
-                    <th class="th_design">Image</th>
-                    <th class="th_design">Delete</th>
-                    <th class="th_design">Edit</th>
+                      <th class="th_design">Username</th>
+                      <th class="th_design">Email</th>
+                      <th class="th_design">Package ID</th>
+                      <th class="th_design">Package Title</th>
+                      <th class="th_design">Price</th>
+                      <th class="th_design">quantity</th>
+                      <th class="th_design">Payment Status</th>
+                      <th class="th_design">Image</th>
                    </tr>
                    
-                   @foreach($package as $package)
+                   @foreach($orders as $orders)
 
                    <tr>
-                    <td class="td_design">{{$package->title1}}</td>
-                    <td class="td_design">{{$package->location}}</td>
-                    <td class="td_design">{{$package->country}}</td>
-                    <td class="td_design">{{$package->package_type}}</td>
-                    <td class="td_design">{{$package->tour_length}}</td>
-                    <td class="td_design">{{$package->tour_description}}</td>
-                    <td class="td_design">{{$package->rating}}</td>
-                    <td class="td_design">{{$package->price}}</td>
-                    <td class="td_design">{{$package->discount_price}}</td>
-                    <td>
-                      <img class="img_size" src="/package/{{$package->image}}" alt="">
-                    </td>
-                    <td class="td_design">
-                      <a class="btn btn-danger" onclick="return confirm('Are you sure you want to Delete this data?')" href="{{url('delete_package',$package->id)}}">Delete</a>
-                    </td>
-                    <td class="td_design">
-                      <a class="btn btn-success" href="{{url('update_all_package',$package->id)}}">Edit</a>
-                    </td>
+                      <td class="td_design">{{$orders->name}}</td>
+                      <td class="td_design">{{$orders->email}}</td>
+                      <td class="td_design">{{$orders->package_id}}</td>
+                      <td class="td_design">{{$orders->package_title}}</td>
+                      <td class="td_design">{{$orders->price}}</td>
+                      <td class="td_design">{{$orders->quantity}}</td>
+                      <td class="td_design">{{$orders->payment_status}}</td>
+                      <td>
+                        <img class="img_size" src="/package/{{$orders->image}}" alt="">
+                      </td>
+                     
                    </tr>
 
                    @endforeach

@@ -7,6 +7,12 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/register.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <style type="text/css">
+        /* Existing CSS code */
+        .text-danger {
+            color: red;
+        }
+    </style>
 </head>
 <body>
 
@@ -15,8 +21,8 @@
     <ul>
         <li><a href="Homepage.html">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="#">Package</a></li>
-        <div class="dropdown-container">
+        <li><a href="packageView">Package</a></li>
+        <!-- <div class="dropdown-container">
             <li><a href="#">Service</a></li>
             <div class="dropdown-content">
                 <a href="#">Adventure</a>
@@ -26,8 +32,8 @@
                 <a href="#">Off Road</a>
                 <a href="#">Camping</a>
             </div>
-        </div>
-        <li><a href="#">Blog</a></li>
+        </div> -->
+        <li><a href="/contact">Contact</a></li>
     </ul>
     <div class="navbar-right">
         @if(session('user'))
@@ -63,6 +69,9 @@
                             </span>
                             <input type="text" name="username" required>
                             <label>Username</label>
+                            @error('username')
+                                <div class="text-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="input-box">
                             <span class="icon">
@@ -70,6 +79,9 @@
                             </span>
                             <input type="email" name = "email" required>
                             <label>Email</label>
+                            @error('email')
+                                <div class="text-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="input-box">
                             <span class="icon">
@@ -77,6 +89,20 @@
                             </span>
                             <input type="password" name="password" required>
                             <label>Password</label>
+
+                            @error('password')
+                                <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <div class="input-box">
+                            <span class="icon">
+                                <i class="fa-solid fa-lock"></i>
+                            </span>
+                            <input type="password" name="password_confirmation" required>
+                            <label>Confirm Password</label>
+                            @error('password_confirmation')
+                                <div class="text-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="remember-forget">
                             <label><input type="checkbox">&nbsp;I agree to the terms & conditions</label>

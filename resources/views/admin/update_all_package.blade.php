@@ -35,7 +35,7 @@
         }
 
         textarea {
-        width: 50%;
+        width: 15%;
         height: 100px;
         padding: 10px;
         resize: vertical;

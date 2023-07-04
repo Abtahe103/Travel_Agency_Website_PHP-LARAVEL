@@ -37,9 +37,12 @@ a{
     font-weight: bolder;
 }
 
-body{
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f1f1f1;
     margin: 0;
-}
+    padding: 0;
+  }
 
 .section-title{
     margin-top: 10rem;

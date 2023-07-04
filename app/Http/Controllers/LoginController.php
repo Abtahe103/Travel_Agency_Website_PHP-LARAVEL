@@ -27,7 +27,8 @@ class LoginController extends Controller
             if($usertype=='1')
             {
                 $request->session()->put('user', $user->username);
-                return redirect('./admin.home')->with('success', 'Login successful');
+                // return redirect('./admin.home')->with('success', 'Login successful');
+                return redirect('/view_all_package')->with('success', 'Login successful');
             }
             else{
                 $request->session()->put('user', $user->username);

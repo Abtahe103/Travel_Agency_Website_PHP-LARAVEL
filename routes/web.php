@@ -45,6 +45,12 @@ Route::get('/profile', function () {
     return view('profile');
 });
 
+Route::get('/packageView',[HomeController::class,'packageView']);
+
+
+Route::get('/contact', function () {
+    return view('contact');
+});
 
 Route::get('/register.html',[RegistrationController::class,'index']);
 Route::post('/register.html',[RegistrationController::class,'register']);
@@ -56,6 +62,12 @@ Route::get('/logout',function(){
     request()->session()->invalidate();
     request()->session()->regenerateToken();
     return back()->with('fail');
+});
+
+Route::get('/logout_admin',function(){
+    request()->session()->invalidate();
+    request()->session()->regenerateToken();
+    return redirect('Homepage.html')->with('fail');
 });
 
 Route::get('/logout2',function(){
@@ -97,6 +109,8 @@ Route::get('/india.html', [HomeController::class, 'index2']);
 
 Route::get('/add_cart/{id}',[HomeController::class,'add_cart']);
 
+Route::post('/delete_cart/{id}',[HomeController::class,'delete_cart']);
+
 Route::get('/show_cart',[HomeController::class,'show_cart']);
 
 Route::get('/profile',[HomeController::class,'show_profile']);
@@ -104,6 +118,13 @@ Route::get('/profile',[HomeController::class,'show_profile']);
 Route::post('/update_profile/{id}',[HomeController::class,'updateProfile']);
 
 Route::get('/booking',[AdminController::class,'booking']);
+
+Route::get('/orders',[AdminController::class,'orders']);
+
+Route::get('/view_template',[AdminController::class,'view_template']);
+
+Route::post('/add_template',[AdminController::class,'add_template']);
+
 
 
 // Route::middleware([

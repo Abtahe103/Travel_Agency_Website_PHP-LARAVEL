@@ -14,12 +14,20 @@ use App\Models\Register;
 
 use App\Models\cart;
 
+use App\Models\country_grid;
+
 class HomeController extends Controller
 {
     public function index()
     {
         $package = all_packages::where('package_type', 'special')->get();
         return view('Homepage', compact('package'));
+    }
+
+    public function packageView()
+    {
+        $package = all_packages::all();
+        return view('packageView', compact('package'));
     }
 
 
@@ -33,7 +41,8 @@ class HomeController extends Controller
     {
         $country = request()->query('country');
         $package = all_packages::where('country', $country)->get();
-        return view('india', compact('package'));
+        $template = country_grid::where('country', $country)->first();
+        return view('india', compact('package','template'));
     }
 
     public function add_cart($id)
@@ -126,6 +135,15 @@ class HomeController extends Controller
         $user->save();
 
         return redirect()->back()->with('message','Package updated Successfully');
+    }
+
+    public function delete_cart($id)
+    {
+        $cart = cart::find($id);
+        $cart->delete();
+
+        return redirect()->back();
+
     }
 
     

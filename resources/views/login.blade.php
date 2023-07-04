@@ -14,8 +14,8 @@
     <ul>
         <li><a href="Homepage.html">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="#">Package</a></li>
-        <div class="dropdown-container">
+        <li><a href="packageView">Package</a></li>
+        <!-- <div class="dropdown-container">
             <li><a href="#">Service</a></li>
             <div class="dropdown-content">
                 <a href="#">Adventure</a>
@@ -25,8 +25,8 @@
                 <a href="#">Off Road</a>
                 <a href="#">Camping</a>
             </div>
-        </div>
-        <li><a href="#">Blog</a></li>
+        </div> -->
+        <li><a href="/contact">Contact</a></li>
     </ul>
     <div class="navbar-right">
         @if(session('user'))

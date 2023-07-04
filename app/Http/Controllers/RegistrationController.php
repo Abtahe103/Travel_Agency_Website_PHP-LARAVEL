@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Register;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
 class RegistrationController extends Controller
 {
@@ -13,6 +14,23 @@ class RegistrationController extends Controller
 
     public function register(Request $request){
         
+        // $request->validate([
+        //     'username' => 'unique:Register|required',
+        //     'email' => 'required|email|unique:Register',
+        //     'password' => 'required|min:6|confirmed',
+        // ]);
+        $validator = Validator::make($request->all(), [
+            'username' => 'unique:Register|required',
+            'email' => 'required|email|unique:Register',
+            'password' => 'required|min:6|confirmed',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()
+                ->back()
+                ->withErrors($validator)
+                ->withInput();
+        }
         // $input = request()->all();
         // Register::create(['email'=>$input['email'],'password'=>$input['password']
         // ]);

@@ -52,8 +52,8 @@
     <ul>
         <li><a href="Homepage.html">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="#">Package</a></li>
-        <div class="dropdown-container">
+        <li><a href="packageView">Package</a></li>
+        <!-- <div class="dropdown-container">
             <li><a href="#">Service</a></li>
             <div class="dropdown-content">
                 <a href="#">Adventure</a>
@@ -63,8 +63,8 @@
                 <a href="#">Off Road</a>
                 <a href="#">Camping</a>
             </div>
-        </div>
-        <li><a href="#">Blog</a></li>
+        </div> -->
+        <li><a href="/contact">Contact</a></li>
     </ul>
     <div class="navbar-right">
         @if(session('user'))
@@ -105,8 +105,8 @@
                 <a href="india.html?country=Nepal"  class="destination nep">NEPAL</a> 
                 <a href="india.html?country=Malaysia"  class="destination malay">MALAYSIA</a>
                 <a href="india.html?country=Singapur"  class="destination sing">SiNGAPUR</a>
-                     
-            
+                <a href="india.html?country=Singapur"  class="destination amer">America</a>
+                                
             </div>
         </section>
         <p class="section-title-package">Tour Package On <span class="last-word">Sale</span></p>
@@ -119,8 +119,8 @@
                                 <img src="package/{{$packageItem->image}}">
                             </div>
                             <div class="card-body">
-                                <h1>{{$packageItem->title1}}</h1>
-                                <p>{{$packageItem->title2}}</p>
+                                <p>{{$packageItem->title1}}</p>
+                                <p>{{$packageItem->location}}</p>
                                 <i class="fa-solid fa-star star"></i>&nbsp;{{$packageItem->rating}}<br><br>
                                 <i class="fa-solid fa-bangladeshi-taka-sign"></i>&nbsp;<del>{{$packageItem->price}}</del><br><br>
                                 <i class="fa-solid fa-bangladeshi-taka-sign"></i>&nbsp;{{$packageItem->discount_price}}

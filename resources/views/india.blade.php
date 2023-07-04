@@ -10,14 +10,15 @@
 </head>
 <body>
     
-    <header class="overlay" style="background-image: url(images/India/sandeep-kr-yadav-EDPdkScQhDQ-unsplash-scaled.jpg);">
+<header class="overlay" style="background-image: url('package/{{ $template->image }}');">
+
     <nav class="navbar">
     <a href="Homepage.html" class="logo"><h1>Expedia</h1></a>
     <ul>
         <li><a href="Homepage.html">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="#">Package</a></li>
-        <div class="dropdown-container">
+        <li><a href="packageView">Package</a></li>
+        <!-- <div class="dropdown-container">
             <li><a href="#">Service</a></li>
             <div class="dropdown-content">
                 <a href="#">Adventure</a>
@@ -27,8 +28,8 @@
                 <a href="#">Off Road</a>
                 <a href="#">Camping</a>
             </div>
-        </div>
-        <li><a href="#">Blog</a></li>
+        </div> -->
+        <li><a href="/contact">Contact</a></li>
     </ul>
     <div class="navbar-right">
         @if(session('user'))
@@ -47,18 +48,19 @@
 </nav>
     
         <div class="caption center">
-            <h1>Best of India This Summar</h1>
+            <h1>{{$template->heading}}</h1>
         </div>
             
         </header>
         <main>
             <div class="card-container">
+            <?php $serial_count=1 ?>
             @foreach($package as $item)
                 <div class="card">
                     <a href="{{ url('/package_description', $item->id) }}">
                         <div class="card-head">
                             <div class="card-serial">
-                                <h1>01</h1>
+                                <h1><?php echo $serial_count ?></h1>
                             </div>
                             <div class="card-title">
                                 <p>{{ $item->title1 }}</p>
@@ -78,51 +80,14 @@
                                 <i class="fa-solid fa-location-dot icon-location"></i>&nbsp;{{ $item->location }}
                             </div>
                             <div class="price">
-                                <i class="fa-solid fa-bangladeshi-taka-sign"></i>&nbsp;<del>{{ $item->price }}</del>&nbsp;
-                                <i class="fa-sharp fa-solid fa-bangladeshi-taka-sign taka">&nbsp;{{ $item->discount_price }}</i>
+                                <div><i class="fa-solid fa-bangladeshi-taka-sign"></i>&nbsp;<del>{{ $item->price }}</del>&nbsp;</div>
+                                <div><i class="fa-sharp fa-solid fa-bangladeshi-taka-sign taka">&nbsp;{{ $item->discount_price }}</i></div>
                             </div>
                         </div>
                     </a>
                 </div>
+                <?php $serial_count=$serial_count + 1 ?>
             @endforeach
-
-            
-               <!-- <div class="card">
-                    <a href="#">
-                        <div class="card-head">
-                            <div class="card-serial">
-                                <h1>02</h1>
-                            </div>
-                            <div class="card-title">
-                                <p>Manali Kasol Tour Package from Delhi</p>
-                            </div>
-                            <div class="rating">
-                                <i class="fa-solid fa-star star">&nbsp;</i>5 . 0
-                                
-                            </div>
-                        </div>
-                         <div class="card-body">
-                            <img src="images/India/caption.jpg" >
-                        </div>
-                        <div class="card-footer">
-                            <div class="clock">
-                                <i class="fa-solid fa-clock icon-clock"></i>&nbsp;5D/4N
-                            </div>
-                            
-                            <div class="location">
-                                <i class="fa-solid fa-location-dot icon-location"></i>&nbsp;Manali
-                            </div>
-                            <div class="price">
-                                <i class="fa-solid fa-bangladeshi-taka-sign"></i>&nbsp;<del>100599.99</del>&nbsp;
-                                <i class="fa-sharp fa-solid fa-bangladeshi-taka-sign taka">&nbsp;6456464</i>
-
-                            </div>
-                           
-                            
-                        </div>
-                    </a>
-                </div> -->
-                
             </div>
         </main>
         <footer>

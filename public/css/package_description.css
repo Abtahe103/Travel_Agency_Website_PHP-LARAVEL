@@ -113,6 +113,13 @@ body{
     
 }
 
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f1f1f1;
+    margin: 0;
+    padding: 0;
+  }
+  
 .logo{
     font-size: 25px;
     color: aliceblue;
@@ -354,103 +361,47 @@ footer p{
     font-size: 2rem;
 }
 
-main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  .tour-info {
+
+
+.tour-info {
     display: flex;
-    margin-bottom: 40px;
+    gap: 20px;
+    align-items: flex-start;
+    margin: 20px;
   }
   
   .tour-image {
     flex: 1;
-  }
-  
-  .tour-image img {
-    max-width: 100%;
-    height: auto;
+    margin: 70px 30px;
   }
   
   .tour-details {
     flex: 2;
-    padding-left: 40px;
   }
   
-  .tour-details h2 {
-    font-size: 24px;
-    color: #333;
-    margin-top: 0;
-  }
-  
-  .tour-duration {
-    font-size: 16px;
-    color: #666;
+  .tour-title {
+    margin-bottom: 20px;
   }
   
   .tour-description {
-    margin-top: 20px;
-    font-size: larger;
-  }
-  
-  
-  .tour-price {
-    font-size: 18px;
-    color: #333;
-    margin-top: 30px;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    font-size: large;
+    background-color: rgb(252, 207, 148);
   }
   
   .book-now-button {
-    background-color: #333;
+    padding: 20px;
+    
+    background-color: #ff8800;
     color: #fff;
     border: none;
-    padding: 10px 20px;
-    font-size: 16px;
     cursor: pointer;
-    margin-top: 20px;
+    font-size: large;
   }
   
-  .tour-highlights {
-    margin-bottom: 40px;
+  .book-now-button:hover {
+    background-color: #d6c90c;
   }
   
-  .tour-highlights h3 {
-    font-size: 24px;
-    color: #333;
-    margin-top: 0;
-  }
   
-  .tour-highlights ul {
-    list-style-type: disc;
-    margin-left: 20px;
-    margin-top: 10px;
-  }
-  
-  .tour-highlights li {
-    font-size: 14px;
-    color: #666;
-    margin-bottom: 10px;
-  }
-  
-  .tour-gallery {
-    margin-bottom: 40px;
-  }
-  
-  .tour-gallery h3 {
-    font-size: 24px;
-    color: #333;
-    margin-top: 0;
-  }
-  
-  .image-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 10px;
-  }
-  
-  .image-grid img {
-    max-width: 100%;
-    height: auto;
-  }
