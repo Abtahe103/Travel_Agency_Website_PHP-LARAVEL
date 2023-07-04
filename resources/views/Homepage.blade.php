@@ -105,7 +105,6 @@
                 <a href="india.html?country=Nepal"  class="destination nep">NEPAL</a> 
                 <a href="india.html?country=Malaysia"  class="destination malay">MALAYSIA</a>
                 <a href="india.html?country=Singapur"  class="destination sing">SiNGAPUR</a>
-                <a href="india.html?country=Singapur"  class="destination amer">America</a>
                                 
             </div>
         </section>
