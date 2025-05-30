@@ -104,13 +104,13 @@
                 <a href="india.html?country=Bhutan"  class="destination bhu">BHUTAN</a> 
                 <a href="india.html?country=Nepal"  class="destination nep">NEPAL</a> 
                 <a href="india.html?country=Malaysia"  class="destination malay">MALAYSIA</a>
-                <a href="india.html?country=Singapur"  class="destination sing">SiNGAPUR</a>
+                <a href="india.html?country=Singapur"  class="destination sing">SINGAPUR</a>
                                 
             </div>
         </section>
         <p class="section-title-package">Tour Package On <span class="last-word">Sale</span></p>
         <section class="tour-packages">
-            <div class="row">
+            <!-- <div class="row">
                 @foreach($package as $index => $packageItem)
                     <div class="card">
                         <a href="{{url('/package_description',$packageItem->id)}}">
@@ -132,11 +132,11 @@
                         <div class="row">
                     @endif
                 @endforeach
-            </div>
+            </div> -->
 
-            <!-- <div class="row">
+            <div class="row">
                 
-                @foreach($package as $package)
+                <!-- @foreach($package as $package)
                 
                     <div class="card">
                         <a href="#">
@@ -156,7 +156,21 @@
                     </div>
                 
                 @endforeach -->
-                    <!-- <div class="card">
+                    <div class="card">
+                        <a href="#"><div class="card-img">
+                            <img src="images/Tour packages/kirti-kalla-JRhvllDBhzs-unsplash.jpg" >
+                            
+                        </div>
+                        <div class="card-body">
+                            <h1>Indian Architectures</h1>
+                            <p>Hawa Mahal</p>
+                            <i class="fa-solid fa-star star"></i>&nbsp;9.3<br><br>
+                            <i class="fa-solid fa-bangladeshi-taka-sign"></i>&nbsp;<del>40599.99</del><br><br>
+                            <i class="fa-solid fa-bangladeshi-taka-sign"></i>&nbsp;36499.99
+                        </div></a>
+                        
+                    </div>
+                    <div class="card">
                         <a href="#"><div class="card-img">
                             <img src="images/Tour packages/sebastian-pena-lambarri-_aJd9HaMHWg-unsplash.jpg" >
                             
@@ -200,11 +214,11 @@
                                 <i class="fa-solid fa-bangladeshi-taka-sign"></i>&nbsp;60499.99
                             </div>
                         </div>
-                        </a>                   -->
+                        </a>                  
                     
-            <!-- </div> -->
+            </div>
         
-            <!-- <div class="row">
+            <div class="row">
                 <div class="card">
                     <a href="#">
                         <div class="card-img">
@@ -269,7 +283,7 @@
                     </div>
                     </a>
                           
-                </div> -->
+                </div>
             
         </section>
         
