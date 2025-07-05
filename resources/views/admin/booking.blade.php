@@ -5,16 +5,22 @@
       @include('admin.css')
       <style type="text/css">
 
+        body, .container-scroller, .main-panel, .content-wrapper {
+          background-color: rgb(235, 235, 235);
+          color: #333 !important;
+        }
+
         .center{
           margin: auto;
           width: 100%;
-          border: 2px solid white;
+          border-collapse: collapse; /* collapse borders for better look */
           margin-top: 40px;
         }
         
         .font_size{
           text-align: center;
           padding-top: 20px;
+          color: #333;
         }
 
         .img_size{
@@ -22,18 +28,26 @@
           width: 150px;
         }
 
+        /* Orange background and white text for table header */
         .th_color{
-          background-color: rgb(151, 151, 255);
+          background-color: rgb(255, 145, 0);
+          color: white;
         }
 
+        /* Black borders for all table header cells */
         .th_design{
-          border: 1px solid white;
+          border: 1px solid black;
           padding: 10px;
+          text-align: left;
+          
         }
 
+        /* Black borders for all table body cells */
         .td_design{
-          border: 1px solid white;
+          border: 1px solid black;
           padding: 10px;
+          vertical-align: top;
+          background-color: white;
         }
       </style>
   </head>
@@ -68,7 +82,7 @@
                       <th class="th_design">Package ID</th>
                       <th class="th_design">Package Title</th>
                       <th class="th_design">Price</th>
-                      <th class="th_design">quantity</th>
+                      <th class="th_design">Quantity</th>
                       <th class="th_design">Payment Status</th>
                       <th class="th_design">Image</th>
                    </tr>
@@ -83,8 +97,8 @@
                       <td class="td_design">{{$orders->price}}</td>
                       <td class="td_design">{{$orders->quantity}}</td>
                       <td class="td_design">{{$orders->payment_status}}</td>
-                      <td>
-                        <img class="img_size" src="/package/{{$orders->image}}" alt="">
+                      <td class="td_design">
+                        <img class="img_size" src="/package/{{$orders->image}}" alt="Package Image">
                       </td>
                      
                    </tr>

@@ -9,10 +9,10 @@
 </head>
 <body>
 <nav class="navbar">
-    <a href="Homepage.html" class="logo"><h1>Expedia</h1></a>
+    <a href="Homepage" class="logo"><h1>Expedia</h1></a>
     <ul>
-        <li><a href="Homepage.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
+        <li><a href="Homepage">Home</a></li>
+        <li><a href="about">About</a></li>
         <li><a href="packageView">Package</a></li>
         <!-- <div class="dropdown-container">
             <li><a href="#">Service</a></li>
@@ -25,7 +25,7 @@
                 <a href="#">Camping</a>
             </div>
         </div> -->
-        <li><a href="/contact">Contact</a></li>
+        <li><a href="contact">Contact</a></li>
     </ul>
     <div class="navbar-right">
         @if(session('user'))
@@ -37,7 +37,7 @@
                 </div>
             </div>
         @else
-            <a href="login.html" class="log-in">Log In</a>
+            <a href="login" class="log-in">Log In</a>
         @endif
         <a href="{{ url('show_cart') }}"><i class="fa-solid fa-cart-shopping cart"></i></a>
     </div>

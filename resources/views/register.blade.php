@@ -17,10 +17,10 @@
 <body>
 
 <nav class="navbar">
-    <a href="Homepage.html" class="logo"><h1>Expedia</h1></a>
+    <a href="Homepage" class="logo"><h1>Expedia</h1></a>
     <ul>
-        <li><a href="Homepage.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
+        <li><a href="Homepage">Home</a></li>
+        <li><a href="about">About</a></li>
         <li><a href="packageView">Package</a></li>
         <!-- <div class="dropdown-container">
             <li><a href="#">Service</a></li>
@@ -33,7 +33,7 @@
                 <a href="#">Camping</a>
             </div>
         </div> -->
-        <li><a href="/contact">Contact</a></li>
+        <li><a href="contact">Contact</a></li>
     </ul>
     <div class="navbar-right">
         @if(session('user'))
@@ -45,7 +45,7 @@
                 </div>
             </div>
         @else
-            <a href="login.html" class="log-in">Log In</a>
+            <a href="login" class="log-in">Log In</a>
         @endif
         <a href="{{ url('show_cart') }}"><i class="fa-solid fa-cart-shopping cart"></i></a>
     </div>
@@ -110,7 +110,7 @@
                         </div>
                         <button type="submit" class="btn">Register</button>
                         <div class="login-register">
-                            <p>Already have an account?<a href="login.html" class="register-link">Login</a></p>
+                            <p>Already have an account?<a href="login" class="register-link">Login</a></p>
                         </div>
                     </form>
                 </div>
@@ -118,9 +118,7 @@
             </div>
         </div>
     </header>
-    <main>
-        
-    </main>
+
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>

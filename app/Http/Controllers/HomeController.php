@@ -20,6 +20,10 @@ class HomeController extends Controller
 {
     public function index()
     {
+        if (session('usertype') == '1') {
+            // Redirect admin to view all packages page
+            return redirect('/view_all_package');
+        }
         $package = all_packages::where('package_type', 'special')->get();
         return view('Homepage', compact('package'));
     }
@@ -37,12 +41,12 @@ class HomeController extends Controller
         return view('package_description',compact('package'));
 
     }
-    public function index2()
+    public function grid()
     {
         $country = request()->query('country');
         $package = all_packages::where('country', $country)->get();
         $template = country_grid::where('country', $country)->first();
-        return view('india', compact('package','template'));
+        return view('grid', compact('package','template'));
     }
 
     public function add_cart($id)
@@ -89,7 +93,7 @@ class HomeController extends Controller
     else {
         // User is not logged in
         // You can redirect to the login page or display an error message
-        return redirect('login.html')->with('error', 'Please log in to add items to the cart.');
+        return redirect('login')->with('error', 'Please log in to add items to the cart.');
     }
 }
 
@@ -111,7 +115,7 @@ class HomeController extends Controller
         else {
             // User is not logged in
             // You can redirect to the login page or display an error message
-            return redirect('login.html')->with('error', 'Please log in to add items to the cart.');
+            return redirect('login')->with('error', 'Please log in to add items to the cart.');
         }
         
     }

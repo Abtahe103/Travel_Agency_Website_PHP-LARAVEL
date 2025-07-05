@@ -188,13 +188,14 @@ body {
     background-color: rgb(128, 128, 128);
 }
 
-.wrapper{
-    z-index: -1;
+.wrapper {
     display: flex;
     justify-content: center;
-    /* align-items: center; */
-    height: 80vh;
+    align-items: center;
+    height: 70vh; /* full height of the viewport */
+    z-index: -1; /* Make it above background */
 }
+
 
 .form-box{
     /* display: flex;

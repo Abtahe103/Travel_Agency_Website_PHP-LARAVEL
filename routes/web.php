@@ -17,27 +17,27 @@ use Illuminate\Support\Facades\Route;
 // });
 Route::get('/',[HomeController::class,'index']);
 
-Route::get('/Homepage.html',[HomeController::class,'index']);
+Route::get('/Homepage',[HomeController::class,'index']);
 
-Route::get('/about.html', function () {
-    
+Route::get('/about', function () {
+
     return view('about');
 });
 
-// Route::get('/login.html', function () {
+// Route::get('/login', function () {
 //     return view('login');
 // });
 
-// Route::get('/register.html', function () {
+// Route::get('/register', function () {
 //     return view('register');
 // });
 
-Route::get('/india.html',[HomeController::class,'index2']);
+Route::get('/grid',[HomeController::class,'grid']);
 
 Route::get('/package_description', function () {
     return view('package_description');
 });
-Route::get('/cart.html', function () {
+Route::get('/cart', function () {
     return view('cart');
 });
 
@@ -52,11 +52,11 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
-Route::get('/register.html',[RegistrationController::class,'index']);
-Route::post('/register.html',[RegistrationController::class,'register']);
+Route::get('/register',[RegistrationController::class,'index']);
+Route::post('/register',[RegistrationController::class,'register']);
 
-Route::get('/login.html',[LoginController::class,'index']);
-Route::post('/login.html',[LoginController::class,'check']);
+Route::get('/login',[LoginController::class,'index']);
+Route::post('/login',[LoginController::class,'check']);
 
 Route::get('/logout',function(){
     request()->session()->invalidate();
@@ -67,13 +67,13 @@ Route::get('/logout',function(){
 Route::get('/logout_admin',function(){
     request()->session()->invalidate();
     request()->session()->regenerateToken();
-    return redirect('Homepage.html')->with('fail');
+    return redirect('Homepage')->with('fail');
 });
 
 Route::get('/logout2',function(){
     request()->session()->invalidate();
     request()->session()->regenerateToken();
-    return redirect('login.html')->with('fail');
+    return redirect('login')->with('fail');
 });
 
 Route::get('/admin.home', function () {
@@ -81,27 +81,27 @@ Route::get('/admin.home', function () {
 });
 
 
-Route::get('/view_package',[AdminController::class,'view_package']);
+// Route::get('/view_package',[AdminController::class,'view_package']);
 
 Route::post('/add_package',[AdminController::class,'add_package']);
 
-Route::get('/show_package',[AdminController::class,'show_package']);
+// Route::get('/show_package',[AdminController::class,'show_package']);
 
-Route::get('/delete_package/{id}',[AdminController::class,'delete_package']);
+Route::get('/delete_package/{id}',[AdminController::class,'delete_package'])->middleware('admin');
 
 Route::get('/update_package/{id}',[AdminController::class,'update_package']);
 
 Route::post('/update_package_confirm/{id}',[AdminController::class,'update_package_confirm']);
 
-Route::get('/view_all_package',[AdminController::class,'view_all_package']);
+Route::get('/view_all_package',[AdminController::class,'view_all_package'])->middleware('admin');
 
-Route::post('/add_all_package',[AdminController::class,'add_all_package']);
+// Route::post('/add_all_package',[AdminController::class,'add_all_package'])->middleware('admin');
 
-Route::get('/show_all_package',[AdminController::class,'show_all_package']);
+Route::get('/show_all_package',[AdminController::class,'show_all_package'])->middleware('admin');
 
-Route::get('/update_all_package/{id}',[AdminController::class,'update_all_package']);
+Route::get('/update_all_package/{id}',[AdminController::class,'update_all_package'])->middleware('admin');
 
-Route::post('/update_all_package_confirm/{id}',[AdminController::class,'update_all_package_confirm']);
+Route::post('/update_all_package_confirm/{id}',[AdminController::class,'update_all_package_confirm'])->middleware('admin');
 
 Route::get('/package_description/{id}',[HomeController::class,'package_description']);
 
@@ -117,11 +117,11 @@ Route::get('/profile',[HomeController::class,'show_profile']);
 
 Route::post('/update_profile/{id}',[HomeController::class,'updateProfile']);
 
-Route::get('/booking',[AdminController::class,'booking']);
+Route::get('/booking',[AdminController::class,'booking'])->middleware('admin');
 
-Route::get('/orders',[AdminController::class,'orders']);
+Route::get('/orders',[AdminController::class,'orders'])->middleware('admin');
 
-Route::get('/view_template',[AdminController::class,'view_template']);
+Route::get('/view_template',[AdminController::class,'view_template'])->middleware('admin');
 
 Route::post('/add_template',[AdminController::class,'add_template']);
 

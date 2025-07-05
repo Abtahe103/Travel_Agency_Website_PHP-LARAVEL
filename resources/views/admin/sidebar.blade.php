@@ -1,114 +1,129 @@
+<style>
+  /* Sidebar background */
+  .sidebar {
+    background-color:rgb(255, 255, 255) !important;
+  }
+
+  /* Default sidebar link */
+  .sidebar .nav-link {
+    color: #000 !important; /* black text */
+    background-color: transparent !important;
+    transition: all 0.3s ease;
+  }
+
+  /* Sidebar link hover and active background */
+  .sidebar .nav-link:hover,
+  .sidebar .nav-link:focus,
+  .sidebar .nav-link.active {
+    background-color: rgb(255, 145, 0) !important; /* orange background */
+    color: #fff !important; /* white text on hover */
+  }
+
+  /* Orange vertical bar on active nav-link */
+  .sidebar .nav-link.active {
+    border-left: 4px solid rgb(255, 145, 0) !important;
+    box-shadow: none !important;
+  }
+
+  /* Sidebar menu title (text inside link) */
+  .sidebar .nav-link .menu-title {
+    color: #000 !important; /* default black */
+  }
+
+  /* Sidebar menu title color on hover and active */
+  .sidebar .nav-link:hover .menu-title,
+  .sidebar .nav-link:focus .menu-title,
+  .sidebar .nav-link.active .menu-title {
+    color: #fff !important; /* white text on hover */
+  }
+
+  /* Sidebar icon color */
+  .sidebar .nav-link .menu-icon i {
+    color: #000 !important; /* default black */
+  }
+
+  /* Sidebar icon color on hover and active */
+  .sidebar .nav-link:hover .menu-icon i,
+  .sidebar .nav-link:focus .menu-icon i,
+  .sidebar .nav-link.active .menu-icon i {
+    color: #fff !important; /* white icon on hover */
+  }
+
+  /* Collapse arrow color */
+  .sidebar .menu-arrow {
+    color: #000 !important;
+  }
+
+  /* Collapse arrow color on hover/active */
+  .sidebar .nav-link:hover .menu-arrow,
+  .sidebar .nav-link:focus .menu-arrow,
+  .sidebar .nav-link.active .menu-arrow {
+    color: #fff !important;
+  }
+
+  /* Brand name styling */
+  .brand-name {
+    font-size: 24px;
+    font-weight: bold;
+    color: white; /* rest of letters white */
+  }
+
+  .brand-name::first-letter {
+    color: rgb(255, 145, 0); /* orange */
+    font-size: 36px;
+    font-weight: bold;
+  }
+</style>
+
+
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
-        <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
-          <!-- <a class="sidebar-brand brand-logo" href="index.html"><img src="admin/assets/images/logo.svg" alt="logo" /></a>
-          <a class="sidebar-brand brand-logo-mini" href="index.html"><img src="admin/assets/images/logo-mini.svg" alt="logo" /></a> -->
-          <h1>Expedia</h1></a>
-        </div>
-        <ul class="nav">
-          <li class="nav-item profile">
-            <div class="profile-desc">
-              <!-- <div class="profile-pic">
-                <div class="count-indicator">
-                  <img class="img-xs rounded-circle " src="admin/assets/images/faces/face15.jpg" alt="">
-                  <span class="count bg-success"></span>
-                </div>
-                <div class="profile-name">
-                  <h5 class="mb-0 font-weight-normal">Henry Klein</h5>
-                  <span>Gold Member</span>
-                </div>
-              </div> -->
-              <!-- <a href="#" id="profile-dropdown" data-toggle="dropdown"><i class="mdi mdi-dots-vertical"></i></a> -->
-              <div class="dropdown-menu dropdown-menu-right sidebar-dropdown preview-list" aria-labelledby="profile-dropdown">
-                <a href="#" class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <div class="preview-icon bg-dark rounded-circle">
-                      <i class="mdi mdi-settings text-primary"></i>
-                    </div>
-                  </div>
-                  <div class="preview-item-content">
-                    <p class="preview-subject ellipsis mb-1 text-small">Account settings</p>
-                  </div>
-                </a>
-                <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <div class="preview-icon bg-dark rounded-circle">
-                      <i class="mdi mdi-onepassword  text-info"></i>
-                    </div>
-                  </div>
-                  <div class="preview-item-content">
-                    <p class="preview-subject ellipsis mb-1 text-small">Change Password</p>
-                  </div>
-                </a>
-                <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <div class="preview-icon bg-dark rounded-circle">
-                      <i class="mdi mdi-calendar-today text-success"></i>
-                    </div>
-                  </div>
-                  <div class="preview-item-content">
-                    <p class="preview-subject ellipsis mb-1 text-small">To-do list</p>
-                  </div>
-                </a>
-              </div>
-            </div>
+  <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
+    <h1 class="brand-name">Expedia</h1>
+  </div>
+
+  <ul class="nav">
+    <!-- <li class="nav-item nav-category">
+      <span class="nav-link">Navigation</span>
+    </li> -->
+    <br>
+
+    <li class="nav-item menu-items">
+      <a class="nav-link" href="{{ url('/orders') }}">
+        <span class="menu-icon">
+          <i class="mdi mdi-speedometer"></i>
+        </span>
+        <span class="menu-title">Bookings</span>
+      </a>
+    </li>
+
+    <li class="nav-item menu-items">
+      <a class="nav-link" href="{{ url('/view_template') }}">
+        <span class="menu-icon">
+          <i class="mdi mdi-laptop"></i>
+        </span>
+        <span class="menu-title">Add Template</span>
+      </a>
+    </li>
+
+
+    <li class="nav-item menu-items">
+      <a class="nav-link" data-toggle="collapse" href="#all-packages" aria-expanded="false" aria-controls="ui-basic">
+        <span class="menu-icon">
+          <i class="mdi mdi-laptop"></i>
+        </span>
+        <span class="menu-title">All Packages</span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="collapse" id="all-packages">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url('/view_all_package') }}">Add Packages</a>
           </li>
-          <li class="nav-item nav-category">
-            <span class="nav-link">Navigation</span>
-          </li>
-          <li class="nav-item menu-items">
-            <a class="nav-link" href="{{url('/orders')}}">
-              <span class="menu-icon">
-                <i class="mdi mdi-speedometer"></i>
-              </span>
-              <span class="menu-title">Bookings</span>
-            </a>
-          </li>
-          <!-- <li class="nav-item menu-items">
-            <a class="nav-link" data-toggle="collapse" href="#packages-on-sale" aria-expanded="false" aria-controls="ui-basic">
-              <span class="menu-icon">
-                <i class="mdi mdi-laptop"></i>
-              </span>
-              <span class="menu-title">Packages On Sale</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="packages-on-sale">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{{url('/view_package')}}">Add Packages</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{url('/show_package')}}">Show Packages</a></li>
-              </ul>
-            </div>
-          </li> -->
-          <li class="nav-item menu-items">
-            <a class="nav-link" data-toggle="collapse" href="#container-template" aria-expanded="false" aria-controls="ui-basic">
-              <span class="menu-icon">
-                <i class="mdi mdi-laptop"></i>
-              </span>
-              <span class="menu-title">Container Template</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="container-template">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{{url('/view_template')}}">Add Template</a></li>
-                
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item menu-items">
-            <a class="nav-link" data-toggle="collapse" href="#all-packages" aria-expanded="false" aria-controls="ui-basic">
-              <span class="menu-icon">
-                <i class="mdi mdi-laptop"></i>
-              </span>
-              <span class="menu-title">All Packages</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="all-packages">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{{url('/view_all_package')}}">Add Packages</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{url('/show_all_package')}}">Show Packages</a></li>
-              </ul>
-            </div>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url('/show_all_package') }}">Show Packages</a>
           </li>
         </ul>
-      </nav>
+      </div>
+    </li>
+  </ul>
+</nav>
