@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 
 use App\Models\package_sale;
 
-use App\Models\all_packages;
+use App\Models\AllPackage;
 
 use App\Models\Register;
 
@@ -24,27 +24,27 @@ class HomeController extends Controller
             // Redirect admin to view all packages page
             return redirect('/view_all_package');
         }
-        $package = all_packages::where('package_type', 'special')->get();
+        $package = AllPackage::where('package_type', 'special')->get();
         return view('Homepage', compact('package'));
     }
 
     public function packageView()
     {
-        $package = all_packages::all();
+        $package = AllPackage::all();
         return view('packageView', compact('package'));
     }
 
 
     public function package_description($id)
     {
-        $package=all_packages::find($id);
+        $package=AllPackage::find($id);
         return view('package_description',compact('package'));
 
     }
     public function grid()
     {
         $country = request()->query('country');
-        $package = all_packages::where('country', $country)->get();
+        $package = AllPackage::where('country', $country)->get();
         $template = country_grid::where('country', $country)->first();
         return view('grid', compact('package','template'));
     }
@@ -57,7 +57,7 @@ class HomeController extends Controller
         $username = session('user');
         $user = Register::where('username', $username)->first();
 
-        $package = all_packages::find($id);
+        $package = AllPackage::find($id);
 
         // Check if the package already exists in the cart for the user
         $existingCart = cart::where('user_id', $user->id)

@@ -6,7 +6,7 @@
     <base href="/public">
     <link rel="stylesheet" href="css/package_description.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
-    <title>Document</title>
+    <title>Expedia</title>
 
 </head>
 <body>

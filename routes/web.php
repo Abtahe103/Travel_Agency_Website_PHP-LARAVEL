@@ -58,10 +58,18 @@ Route::post('/register',[RegistrationController::class,'register']);
 Route::get('/login',[LoginController::class,'index']);
 Route::post('/login',[LoginController::class,'check']);
 
-Route::get('/logout',function(){
+Route::get('/logout', function () {
     request()->session()->invalidate();
     request()->session()->regenerateToken();
-    return back()->with('fail');
+
+    // Check if previous URL was the profile page
+    $previous = url()->previous();
+
+    if (str_contains($previous, '/profile')) {
+        return redirect('/Homepage')->with('fail', 'You have been logged out.');
+    }
+
+    return redirect($previous)->with('fail', 'You have been logged out.');
 });
 
 Route::get('/logout_admin',function(){
@@ -83,7 +91,7 @@ Route::get('/admin.home', function () {
 
 // Route::get('/view_package',[AdminController::class,'view_package']);
 
-Route::post('/add_package',[AdminController::class,'add_package']);
+//Route::post('/add_package',[AdminController::class,'add_package']);
 
 // Route::get('/show_package',[AdminController::class,'show_package']);
 
@@ -95,7 +103,7 @@ Route::post('/update_package_confirm/{id}',[AdminController::class,'update_packa
 
 Route::get('/view_all_package',[AdminController::class,'view_all_package'])->middleware('admin');
 
-// Route::post('/add_all_package',[AdminController::class,'add_all_package'])->middleware('admin');
+Route::post('/add_all_package',[AdminController::class,'add_all_package'])->middleware('admin');
 
 Route::get('/show_all_package',[AdminController::class,'show_all_package'])->middleware('admin');
 
@@ -124,15 +132,3 @@ Route::get('/orders',[AdminController::class,'orders'])->middleware('admin');
 Route::get('/view_template',[AdminController::class,'view_template'])->middleware('admin');
 
 Route::post('/add_template',[AdminController::class,'add_template']);
-
-
-
-// Route::middleware([
-//     'auth:sanctum',
-//     config('jetstream.auth_session'),
-//     'verified'
-// ])->group(function () {
-//     Route::get('/dashboard', function () {
-//         return view('dashboard');
-//     })->name('dashboard');
-// });

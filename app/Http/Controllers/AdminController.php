@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Models\package_sale;
 
-use App\Models\all_packages;
+use App\Models\AllPackage;
 
 use App\Models\booking;
 
@@ -23,36 +23,36 @@ class AdminController extends Controller
         return view('admin.package');
     }
 
-    public function add_package(Request $request)
-    {
-        $package = new package_sale;
-        //variable = new model_name
+    // public function add_package(Request $request)
+    // {
+    //     $package = new package_sale;
+    //     //variable = new model_name
 
-        $package->title1=$request->title1;
-        $package->title2=$request->title2;
-        $package->rating=$request->rating;
-        $package->price=$request->price;
-        $package->discount_price=$request->discount_price;
+    //     $package->title1=$request->title1;
+    //     $package->title2=$request->title2;
+    //     $package->rating=$request->rating;
+    //     $package->price=$request->price;
+    //     $package->discount_price=$request->discount_price;
 
-        $image=$request->image;
+    //     $image=$request->image;
 
-        if($image)
-        {
-            $imagename=time().'.'.$image->getClientOriginalExtension();
+    //     if($image)
+    //     {
+    //         $imagename=time().'.'.$image->getClientOriginalExtension();
 
-            $request->image->move('package',$imagename);
+    //         $request->image->move('package',$imagename);
     
-            $package->image=$imagename;
+    //         $package->image=$imagename;
     
-        }
+    //     }
 
        
-        $package->save();
+    //     $package->save();
 
-        return redirect()->back()->with('message','Package Added Successfully');
+    //     return redirect()->back()->with('message','Package Added Successfully');
 
 
-    }
+    // }
 
     public function show_package()
     {
@@ -62,7 +62,7 @@ class AdminController extends Controller
 
     public function delete_package($id)
     {
-        $package = all_packages::find($id);
+        $package = AllPackage::find($id);
 
         $package->delete();
 
@@ -110,7 +110,7 @@ class AdminController extends Controller
 
     public function add_all_package(Request $request)
     {
-        $package = new all_packages;
+        $package = new AllPackage;
         //variable = new model_name
 
         $package->title1=$request->title1;
@@ -142,19 +142,19 @@ class AdminController extends Controller
 
     public function show_all_package()
     {
-        $package = all_packages::all();
+        $package = AllPackage::all();
         return view('admin.show_all_package',compact('package'));
     }
     
     public function update_all_package($id)
     {
-        $package=all_packages::find($id);
+        $package=AllPackage::find($id);
         return view('admin.update_all_package',compact('package'));
     }
 
     public function update_all_package_confirm(Request $request,$id)
     {
-        $package=all_packages::find($id);
+        $package=AllPackage::find($id);
 
         $package->title1=$request->title1;
         $package->location=$request->location;
