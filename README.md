@@ -169,7 +169,8 @@ DB_PASSWORD=your_database_password</code></pre>
   <a href="https://youtu.be/PHWogjisXTs?si=rUaRraUktmRdk2pZ" target="_blank">
     Video Demonstration Link
   </a>
-  <br>
+  <br><br>
+    Click the link to watch the full video demonstration
   <br><br><br>
 </div>
 
